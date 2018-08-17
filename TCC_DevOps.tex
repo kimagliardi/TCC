@@ -44,7 +44,7 @@
 \begin{document}
 % Diferentemente do normal, os comandos a seguir devem vir aqui mesmo,
 % e não antes do \begin{document} onde seria o lugar deles. 
-\titulo{Adotando práticas de infraestrutura como um código em equipes de infraestrutura tradicionais}
+\titulo{Quem são os profissionais "DevOps"  e quais são as suas competências ?}
 \autor{Kim Bemfica Agliardi\footnote{Aluno do curso de Ciência da Computação.  Email: kim.agliardi@gmail.com}}
 \autor{Christopher da Rosa Pohlmann \footnote{Orientador, professor da Unisinos, Mestre em Engenharia de Produção e Sistemas pela Universidade do Vale do Rio dos Sinos(2009)  Email: chrisp@unisinos.br}}
 
@@ -54,8 +54,8 @@
 % A recomendação é para 150 a 250 palavras.
 %=======================================================================
 \begin{abstract}
-Ao longo dos últimos anos a cultura de DevOps tem ganhado força no mercado de TI. O seu principal objetivo é o alinhamento entre as equipes de desenvolvimento e operação, para que juntos os times realizem entregas mais rápidas e de qualidade, por meio de ferramentas e responsabilidades previamente definidas. Trata-se de uma cultura de colaboração entre às equipes. Este estudo tem como propósito a análise da prática denominada de "infraesturtura como um código", como o próprio nome sugere, trata a infraestrutura de TI como se fosse um código, serão aplicadas técnicas de automação de deployments para uma equipe de infraestrutura "tradicional" que realiza todas as suas tarefas de maneira manual. Este estudo analisará as principais ferramentas disponíveis para automação de infraestrutura e que são aderentes  à realidade da empresa que será base do experimento, também apresentará os principais benefícios e dificuldades encontrados por uma equipe de infraestrutura tradicional ao adotar práticas de automação.
-\palavraschave{DevOps\@. Infraestrutura como código\@.  ITIL\@. Metódos Ágeis \@. Entrega Contínua \@. Integração Contínua. \@ }
+Ao longo dos últimos anos a cultura de DevOps tem ganhado força no mercado de TI. O seu principal objetivo é o alinhamento entre as equipes de desenvolvimento e operação, para que juntos os times realizem entregas mais rápidas e de qualidade, por meio de ferramentas e responsabilidades previamente definidas. Trata-se de uma cultura de colaboração entre às equipes. Este estudo tem como objetivo identificar o perfil técnico e ferramentas utilizadas por profissionais inseridos em ambientes que promovem a cultura DevOps, bem como identificar as dificuldades/ganhos observados por estes ao longo da adoção desta cultura e suas práticas.
+\palavraschave{DevOps\@. Infraestrutura como código\@. Metódos Ágeis \@. Entrega Contínua \@. Integração Contínua. \@ }
 \end{abstract}
 
 %=======================================================================
@@ -67,15 +67,13 @@ A nova realidade provoca a reorganização intensa da sociedade, gerando modific
 
 Com toda essa competitividade existente no mercado, mudanças de software tornaram-se comuns para as empresas, que até então, não estavam habituadas a realizar mudanças tão constantes em suas aplicações. O aumento no ritmo de entrega de software evidenciou a disparidade existente entre as equipes de desenvolvimento e operações de TI existentes nas organizações. Enquanto equipes de desenvolvimento, de um modo geral, possuem metodologias, frameworks e ferramentas bem estruturadas, que automatizam etapas de desenvolvimento de software e tratam do ciclo de vida de uma aplicação, equipes de operações de TI ainda  não estão tão bem estruturadas, realizando diversas tarefas de maneira manual e com uma baixa padronização. 
 
-Confome \citetexto{Debois2008} observou as equipes de infraestrutura também podem adotar algumas das práticas já existentes e utilizadas por equipes de desenvolvimento, e a partir dos questionamentos levantados pelo artigo "Agile and Operations Infrastructure: How Infra-gile Are You?"\textbf{ajustar com citação latex}, foi gerada a lista de discussao "Agile-Sysadmin", que pode ser considerada uma semente inicial da cultura DevOps, que prega justamente a adoção de práticas já consideradas maduras pelas equipes. Também podemos pensar em DevOps como uma evolução natural dos métodos ágeis, que foi extendido e passou à atender também áreas de operação.
+Confome \citetexto{Debois2008} observou as equipes de infraestrutura também podem adotar algumas das práticas já existentes e utilizadas por equipes de desenvolvimento, e a partir dos questionamentos levantados pelo artigo "Agile and Operations Infrastructure: How Infra-gile Are You?", foi gerada a lista de discussao "Agile-Sysadmin", que pode ser considerada uma semente inicial da cultura DevOps, que prega justamente a adoção de práticas já consideradas maduras pelas equipes. Também podemos pensar em DevOps como uma evolução natural dos métodos ágeis, que foi estendido e passou à atender também áreas de operação. É importante salientar que diferente do movimento ágil ou ITIL, DevOps não possui uma "metodologia" para implementação, ou até mesmo, um manifesto, o que acaba tornando seu processo de adoção um pouco mais complexo, dado este contexto, diversos estudos buscam uma definição sobre o que é DevOps, quais são seus processos e práticas e quem são as características que as companhias buscam 
 
-Desta forma, este estudo tem como objetivo analisar o processo de impementação de mudanças em uma equipe de infraestrutura de TIC levando em conta os princípios da cultura DevOps.
+Desta forma, este estudo tem como objetivo analisar quais são as características dos profissionais que estão inseridos em ambientes que promovem a cultura DevOps, entendendo quais são suas competências técnicas,ferramentas utilizadas, experiências e dificuldades encontradas por estes profissionais para sustentar as práticas de automação que são aplicadas neste novo paradigma de trabalho.
 
-%visa entender quais passos são necessários para implementar uma infraestrutura como um código e entender se a adoção desta prática pode impulsionar a adoção de uma cultura DevOps.
+A referida análise desdobra-se no seguintes objetivos específicos: (i) Identificar as ferramentas e princípios que suportam o processo de infraestrutura como um código, (ii)Identificar quais processos de DevOps estão em uso por parte dos profissionais, (iii) Analisar como os profissionais estão se preparando (estudos) para este novo paradigma, e como buscam informações sobre novas ferramentas / processos, (iv) Identificar o nível de experiência destes profissionais, (v) Analisar quais são as dificuldades enfrentadas por estes profissionais na adoção deste novo paradigma.
 
-A referida análise desbobra-se no seguintes objetivos específicos: (i) Identificar as ferramentas e princípios que suportam o processos de infraestrutura como um código (IaaC), (ii) Analisar quais ferramentas são aderentes à realidade da empresa que será utilizada como base para o experimento, (iii) Aplicar estas práticas/ferramentas ao ambiente de desenvolvimento/homologação, (iv) verificar quais os principais benefícios e dificuldades encontrados pela equipe de infraestrutura ao aplicar estas práticas e (v) sintetizar as lições aprendidas ao longo do processo.
-
-A pesquisa organiza-se em Capítulo 2, que apresenta o referencial teórico, conceituando em linhas gerais o que é DevOps, quais são as características que esta cultura apresenta e uma breve descrição sobre o ferramental que será utilizado no experimento. O capitulo 3 apresenta a metodologia adotada para o desenvolvimento da pesquisa. O capítulo 4 apresenta a análise dos resultados obtidos sobre o experimento.
+O \textbf{segundo capítulo} apresenta o referencial teórico, conceituando em linhas gerais o que é DevOps, quais são as características que esta cultura apresenta e uma breve descrição sobre as ferramentas utilizadas pelos profissionais.O \textbf{terceiro capítulo} apresenta-se as etapas de pesquisa. No \textbf{quarto capítulo} detalham-se os resultados do survey e por fim, no \textbf{quinto capítulo} seguem as conclusões.
 %=======================================================================
 % Referencial Teórico
 %=======================================================================
@@ -148,8 +146,8 @@ Esse estudo foi um marco para alavancar o movimento e nesta mesma conferência, 
 \subsubsection{O que é DevOps ?}
 
 \textbf{DevOps} é um termo que se tornou uma "buzzword" no mercado e  por não ser prescritivo, muitas empresas tem apresentado a definição que lhes parece correta, bem como alguns profissionais que se entitulam "DevOps". 
-Diferente das metodologias ágeis que possuem um manifesto ou ITIL que possui uma descrição de seus processos, não existe uma descrição exata sobre como "ser DevOps", pois ela é uma cultura definida por ideias e não por uma definição rigorosa. Ela está em constante evolução, processos e ideias tem sido discutidos ao longo dos últimos anos e pelo que se observa na comunidade, a tendência é de que permaneça assim ao longo dos próximos anos.  \cite{Fallis2013}  \newline
-A definição proposta por \citep{Jabbari2016} é de que: DevOps é uma metodologia de desenvolvimento que busca eliminar os (como o objetivo principal de DevOps) gap's existentes entre Desenvolvimento e Operações. Também pode ser dito como um paradigma, método ou conjunto de princípios e práticas que possibilitam uma melhor comunicação e colaboração, resultando em um trabalho em equipe eficiente entre as equipes de desenvolvedores e operadores.
+Diferente das metodologias ágeis que possuem um manifesto ou ITIL que possui uma descrição sobre seus processos, não existe uma descrição exata sobre como "ser DevOps", pois ela é uma cultura definida por ideias e não por uma definição rigorosa. Ela está em constante evolução, processos e ideias tem sido discutidos ao longo dos últimos anos e pelo que se observa na comunidade, a tendência é de que permaneça assim ao longo dos próximos anos  \cite{Fallis2013}.  \newline
+A definição proposta por \citep{Jabbari2016} é de que: DevOps é uma metodologia de desenvolvimento que busca eliminar os gap's existentes entre Desenvolvimento e Operações. Também pode ser dito como um paradigma, método ou conjunto de princípios e práticas que possibilitam uma melhor comunicação e colaboração, resultando em um trabalho em equipe eficiente entre as equipes de desenvolvedores e operadores.
 
 Um acrônimo que é frequentemente citado nos grupos sobre DevOps é o CAMS, que significa \textbf{C}ulture, \textbf{A}utomation, \textbf{M}easurement and \textbf{S}haring. Ele é um framework muito útil e é frequentemente mencionado para demonstrar que DevOps não é apenas uma coisa única (como implementar uma ferramenta), mas uma abordagem mais ampla para prestação de serviço, Também trata como mehorar a colaboração, comunicação  e coordenação entre diferentes funções na organização. Segundo\cite{Willis}, temos as seguintes ideias sobre cada ponto:
 \begin{itemize}
@@ -189,26 +187,6 @@ Baseado neste paradigma, criar e destruir ambientes frequentemente é uma boa pr
 Um benefícios de transformar a infraestrutura em código é a possibilidade de implementar a integração contínua de maneira adequada, permitindo a execução automática, isolada, e com testes de integração em ambientes com configurações idênticas à de produção. Também torna mais fácil o \textit{rollout} de uma aplicação do ambiente de homologação para o ambiente produtivo e como o processo é bem definido e bem descrito, podemos pensar na escalabilidade de uma aplicação em momentos de pico, de maneira automatizada. Em caso de problemas, o esforço é menor, pois para realizar o \textit{rollback} para a versão anterior da aplicação, seria necessário somente utilizar os arquivos de descrição. \newline
 Como principal desvantagem, podemos pensar que para versionar a configuração, será exigido um tempo maior. A instalação manual de um servidor geralmente é rápida, porém, não é escalável. Já a definição da infra em arquivos de definição pode ser mais custosa, principalmente se o operador não for experiente no assunto.
 
-
-
-\subsubsection{Ferramentas}
-O ferramental utilizado em DevOps pode ser separado por categorias, conforme demonstrado na Figura 2. Para a construção deste experimento, utilizaremos as seguintes categorias de ferramentas:
-\begin{itemize}
-\item Provisionamento (Ansible e Terraform);
-\item Infraestrutura (VMware e HyperV)
-\item Gestão de versionamento (Git e Gitlab);
-\item Gestão de configuração (Chef e Puppet);
-\item Orquestração (Kubernetes);
-\item Integração (Gitlab e Jenkins);
-\item Monitoramento (Zabbix, Grafana, ElasticSearch e Prometheus);
-\item Containerização (Docker).
-\end{itemize}
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=.7]{imagens/devops11.png}
-    \caption{Ferramental que apoia DevOps}
-    \label{fig:DevOpsTools}
-\end{figure}
 
 %=======================================================================
 % Conclusão
