@@ -31,12 +31,28 @@
 \usepackage[T1]{fontenc} % encoding da fonte (afeta a sep. de sílabas)
 \usepackage{graphicx} % comandos para gráficos e inclusão de figuras
 \usepackage{bibentry} % para inserir refs. bib. no meio do texto
+\usepackage{enumitem}
+\usepackage[section]{placeins}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
 
 %=======================================================================
 
 \unisinosbst
-\usepackage{xcolor}
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 %\usepackage[alf]{abntcite}
+\newcolumntype{L}{>{\centering\arraybackslash}m{8cm}}
+\newcommand{\source}[1]{\caption*{Fonte: {#1}} }
+\long\def\/*#1*/{}
+
+
+%Ajustando a source para figuras
+%=======================================================================
+% Capa
+%=======================================================================
 
 %=======================================================================
 % Início do documento.
@@ -63,49 +79,73 @@ Ao longo dos últimos anos a cultura de DevOps tem ganhado força no mercado de 
 % Introdução
 %=======================================================================
 \section{Introdução}
-Ao longo dos últimos anos, foi possível observar um crescimento na importância das áreas de TI, fato que até então, não era verdade.  \citetexto{Beal2009}  lembra que "por muito tempo  a TI foi considerada um "centro de custo" e que em princípio não gerava qualquer retorno para o negócio", dando ênfase os altos valores de investimento em equipamentos e o pouco uso que se fazia destes.  Atualmente, as organizações vêm enfrentando um ambiente extremamente competitivo, inseridas em uma sociedade profundamente afetada pelos novos paradigmas introduzidos pela chamada sociedade da informação. \citep{AudyFreitag08}.
-A nova realidade provoca a reorganização intensa da sociedade, gerando modificações nas organizações. Neste contexto, as áreas de sistemas de informação tem se tornado cada vez mais críticas, dado o constante clima de mudança.
+
+\textcolor{red}{O titulo do artigo ficou interessante, mas temos que fazer uma reflexão}
+
+Ao longo dos últimos anos foi possível observar um crescimento na importância das áreas de TI, fato que até então, não era verdade.  \citetexto{Beal2009}  lembra que "por muito tempo  a TI foi considerada um "centro de custo" e que em princípio não gerava qualquer retorno para o negócio", dando ênfase aos altos valores de investimento em equipamentos e o pouco uso que se fazia destes.  Atualmente, as organizações vêm enfrentando um ambiente extremamente competitivo, inseridas em uma sociedade profundamente afetada pelos novos paradigmas introduzidos pela chamada sociedade da informação. A nova realidade provoca a reorganização intensa da sociedade, gerando modificações nas organizações. Neste contexto, as áreas de sistemas de informação tem se tornado cada vez mais críticas, dado o constante clima de mudança  \cite[p. 15]{AudyFreitag08}.
 
 Com toda essa competitividade existente no mercado, mudanças de software tornaram-se comuns para as empresas, que até então, não estavam habituadas a realizar mudanças tão constantes em suas aplicações. O aumento no ritmo de entrega de software evidenciou a disparidade existente entre as equipes de desenvolvimento e operações de TI existentes nas organizações. Enquanto equipes de desenvolvimento, de um modo geral, possuem metodologias, frameworks e ferramentas bem estruturadas, que automatizam etapas de desenvolvimento de software e tratam do ciclo de vida de uma aplicação, equipes de operações de TI ainda  não estão tão bem estruturadas, realizando diversas tarefas de maneira manual e com uma baixa padronização. 
+Confome observado por \citetexto{Debois2008} infraestrutura também podem adotar algumas das práticas já existentes e utilizadas por equipes de desenvolvimento, e a partir dos questionamentos levantados em seu artigo "Agile and Operations Infrastructure: How Infra-gile Are You?", e de uma lista de emails denominada "Agile-Sysadmin", na qual era debatida a ideia de adoção de práticas ágeis e de automação para equipes de infraestrutura. Também podemos pensar em DevOps como uma evolução natural dos métodos ágeis, que foi estendido e passou à atender também áreas de operação. 
+É importante salientar que diferente do movimento ágil ou ITIL, DevOps não possui uma "metodologia" para implementação, ou até mesmo, um manifesto que direcione seu processo de adoção, o que acaba tornando esta tarefa um pouco mais complexa, dado este contexto, diversos estudos buscam uma definição sobre o que é DevOps, quais são seus processos e práticas, formas de implementar a cultura e quais são as características (habilidades e experiências) que as companhias buscam nos profissionais que vão compor estas equipes.
 
-Confome \citetexto{Debois2008} observou as equipes de infraestrutura também podem adotar algumas das práticas já existentes e utilizadas por equipes de desenvolvimento, e a partir dos questionamentos levantados pelo artigo "Agile and Operations Infrastructure: How Infra-gile Are You?", 
-foi gerada a lista de discussao "Agile-Sysadmin", que pode ser considerada uma semente inicial da cultura DevOps, que prega justamente a adoção de práticas de engenharia de software já consideradas maduras. Também podemos pensar em DevOps como uma evolução natural dos métodos ágeis, que foi estendido e passou à atender também áreas de operação. É importante salientar que diferente do movimento ágil ou ITIL, DevOps não possui uma "metodologia" para implementação, ou até mesmo, um manifesto, o que acaba tornando seu processo de adoção um pouco mais complexo, dado este contexto, diversos estudos buscam uma definição sobre o que é DevOps, quais são seus processos e práticas e quais são as características que as companhias buscam nos profissionais que vão compor estas equipes.
+%\subsection{Motivação}
+DevOps é um assunto abrangente, e por muitos é considerado uma cultura e não apenas uma coleção de práticas de automação. Por ser um assunto recente, encontram-se muitos estudos propondo o que é DevOps e quais são suas práticas relacionadas. Observa-se também alguns poucos artigos acadêmicos relacionados aos profissionais e qual o entendimento destes sobre a importância do tema DevOps em sua rotina de trabalho, a maior parte dos artigos relacionados à estes são encontrados na indústria.
 
-Desta forma, este estudo tem como objetivo analisar quais são as características dos profissionais que estão inseridos em ambientes que promovem a cultura DevOps, entendendo quais são suas habilidades técnicas, grupos de ferramentas utilizadas, experiências e dificuldades encontradas por estes profissionais para sustentar as práticas de automação que são aplicadas neste novo paradigma de trabalho.
+Perguntas de Pesquisa: Quais as características dos profissionais que estão inseridos em ambientes que promovem a cultura DevOps?
 
-A referida análise desdobra-se no seguintes objetivos específicos: (i) Identificar experiências prévias destes profissionais no mercado de TI, (ii) Identificar quais práticas de DevOps estão em uso por parte dos profissionais, (iii) Analisar como os profissionais estão se preparando (estudos) para este novo paradigma, e como buscam informações sobre novas ferramentas / práticas, (iv) Analisar quais são as dificuldades e ganhos encontrados por estes profissionais na adoção deste novo paradigma
+Nesta pesquisa essas características seguem organizadas em (a) dados sócio-demográficos, (b) nível de maturidade das práticas DevOps, (c) ferramentas e atividades, (d) fontes de informação, e (e) dados qualitativos sobre dificuldades e ganhos na adoção do DevOps.
 
-O \textbf{segundo capítulo} apresenta o referencial teórico, conceituando em linhas gerais o que é DevOps, quais são as características que esta cultura apresenta e uma breve descrição sobre as práticas utilizadas pelos profissionais.O \textbf{terceiro capítulo} apresenta-se as etapas de pesquisa. No \textbf{quarto capítulo} detalham-se os resultados do survey e por fim, no \textbf{quinto capítulo} seguem as conclusões.
+%\subsection{Objetivo Geral}
+Desta forma, este estudo tem como objetivo geral analisar as características dos profissionais que estão inseridos em ambientes que promovem a cultura DevOps.
+
+%, entendendo quais são suas habilidades técnicas, grupos de ferramentas relevantes para a automação de processos, experiências e dificuldades encontradas por estes profissionais para sustentar as práticas de automação que são aplicadas neste novo paradigma de trabalho.
+
+%\subsection{Objetivo específicos}
+
+%referida análise desdobra-se no seguintes objetivos específicos:
+
+% begin{enumerate}[label=\alph*)]
+% \item Identificar experiências prévias destes profissionais no mercado de TI;
+%    \item Identificar quais práticas relacionadas a DevOps estão em uso por estes profissionais, bem como em qual estágio de maturidade se encontram;
+%    \item Analisar como estes profissionais estão se preparando em termos de estudo para este novo paradigma, bem como quais são suas fontes de informação sobre novas ferramentas e práticas;
+%    \item Analisar a opinião destes profissionais sobre quais são as dificuldades e ganhos na adoção deste novo paradigma.
+%\end{enumerate}
+%*/
+
+%\subsection{Metodologia}
+Esta pesquisa foi do tipo descritivo, de forma que os procedimentos foram classificados como descritivos.
+Neste trabalho buscou-se analisar quais são as características dos profissionais inseridos em companhias que estão adotando ou já adotaram as práticas da cultura DevOps. Para tanto, foi necessário realizar uma revisão bibliográfica para entender quais são os pontos-chave desta cultura (ferramentas, frameworks e atividades consideradas "core" para este novo papel), baseado nos pontos levantados durante esta revisão, elaborou-se um questionário com 27 questões, relacionadas à DevOps e experiências destes profissionais. 
+
+
+%\subsection{Estrutura do trabalho}
+O presente trabalho divide-se em 5 capítulos, dos quais o \textbf{primeiro capítulo} apresenta os objetivos, o método utilizado e a justificativa para o desenvolvimento do TCC. O \textbf{segundo capítulo} apresenta o referencial teórico, conceituando em linhas gerais o que é DevOps, quais são as características que esta cultura apresenta e uma breve descrição sobre as práticas utilizadas pelos profissionais.O \textbf{terceiro capítulo} apresenta-se as etapas de pesquisa. No \textbf{quarto capítulo} detalham-se os resultados do Survey e por fim, no \textbf{quinto capítulo} seguem as conclusões.
 %=======================================================================
 % Referencial Teórico
 %=======================================================================
 \section{REFERENCIAL TEÓRICO}
-	Ao longo deste capítulo, apresentam-se os principais conceitos sobre DevOps, como seus princípios, métodos e modelos, bem como a história de como surgiu o movimento.
+	Ao longo deste capítulo, apresentam-se os principais conceitos sobre DevOps, como seus princípios, métodos e modelos, bem como as motivações que impulsionaram este movimento.
 
-\subsection{A relação entre Desenvolvimento  e Infraestrutura/Operação}
+\subsection{A relação entre Desenvolvimento  e Operações/Infraestrutura}
 
 Com a pressão constante para entrega de valor por meio de software aos clientes, não é incomum que áreas de desenvolvimento e operações entrem em conflito. Enquanto desenvolvedores buscam pôr em produção o mais brevemente possível novas funcionalidades/sistemas, equipes de operação preocupam-se com a estabilidade, o que significa não realizar alterações em sistemas de produção frequentemente.
 Segundo \citetexto{HUTTERMANN12}, estes conflitos geram barreiras culturais e organizacionais, que ocasionam as seguintes situações:
-
-\begin{itemize}
-\item Como o foco das equipes é diferente, a tensão entre as equipes aumenta e cada uma defende seus interesses individuais, sem pensar no todo;
-\item A lacuna destes processo resulta em diferentes abordagens entre Dev/Ops sobre como gerenciar mudanças, colocá-las em produção e mantê-las funcionando;
-\item  A origem dessa lacuna começa pelas próprias ferramentas utilizadas pelas equipes, que geralmente são diferentes.
-\end{itemize}
+Como o foco das equipes é diferente, a tensão entre as equipes aumenta e cada uma defende seus interesses individuais, sem pensar no todo; A lacuna destes processo resulta em diferentes abordagens entre Dev/Ops sobre como gerenciar mudanças, colocá-las em produção e mantê-las funcionando; A origem dessa lacuna começa pelas próprias ferramentas utilizadas pelas equipes, que geralmente são diferentes.
 
 Existe um termo na indústria que descreve esse tipo de comportamento como "O muro da confusão", que é causado justamente pela combinação de diferentes motivações (cada equipe defende o seu ponto), processos mal formulados e diferentes ferramentas de trabalho. Como cada equipe acredita estar fazendo o correto pelo negócio, as decisões ocorrem de maneira isolada e este "jogo de responsabilidades" ocorre.
 
-\begin{figure}[h]
+\begin{figure}[!h]
     \centering
-    \includegraphics[scale=.9]{imagens/wallOfConfusion.jpg}
-    \caption{Muro da confusão}
+        \caption{Muro da confusão}
+    \includegraphics[scale=.8]{imagens/WallOfConfusion.png}
+    \source{\cite{DEV2PS}}
     \label{fig:Muro da confusão}
-\end{figure}
+    \end{figure}
+
 É interessante observar que ao longo do tempo o processo de desenvolvimento de software sofreu diversos aprimoramentos, passando por modelos como o cascata (waterfall) até chegar no padrão que é visto hoje, que é baseado em metodologias ágeis. Já áreas de operações geralmente baseiam-se em métodos como ITIL (Information Technology Infrastructure Library), que possui processos processos claros e bem definidos para cada etapa de vida de um serviço. Essa diferença processual segue o mesmo descompasso que é visto no ferramental utilizado pelas equipes, enquanto métodos ágeis visam a entrega de pequenas partes de um sistema de maneira constante, gerando um grande número de alterações em um breve período de tempo por meio de suas "sprints", já ITIL, com o processo de gerênciamento de mudanças, prevê um modelo formal com reuniões e discussões entre às equipes antes da realização de alguma alteração. 
 
 \subsection{Métodos ágeis}
-O movimento ágil começou com a escrita do \textbf{Manifesto Ágil} em 2001, e o nome "Agile" foi o nome dado ao conjunto de métodos de desenvolvimento de software que haviam sido desenhados para serem mais leves e flexíveis do que modelos como o cascata.
-O que diz o  \textbf{Manifesto Ágil} :  \newline
+O movimento ágil começou com a escrita do \textbf{Manifesto Ágil} por \citetexto{beck2001agile}, e o nome "Agile" foi o nome dado ao conjunto de métodos de desenvolvimento de software que haviam sido desenhados para serem mais leves e flexíveis do que modelos como o cascata.
+O que diz o manifesto ágil :  \newline
 Estamos descobrindo maneiras melhores de desenvolver 
 software, fazendo-o nós mesmos e ajudando outros a 
 fazerem o mesmo. Através deste trabalho, passamos a valorizar: 
@@ -115,13 +155,14 @@ fazerem o mesmo. Através deste trabalho, passamos a valorizar:
 \item \textbf{Colaboração com o cliente} mais que negociação de contratos;
 \item \textbf{Responder a mudanças} mais que seguir um plano
 \end{itemize}
+
 Ou seja, mesmo havendo valor nos itens à direita, valorizamos mais os itens à esquerda. \newline
 
 É importante perceber que o principal objetivo do movimento ágil é enfatizar a colaboração, flexibilidade e como resultado final, diminuir o tempo de entrega de software, diminuir o valor gasto e fornecer um software de qualidade. Porém, os métodos ágeis não definem práticas para a disponibilização do software, o que acaba gerando uma lacuna entre as equipes de desenvolvimento e operação. Apesar do aumento de performance gerado pela adoção de práticas ágeis, existe a demora da fase de implantação do software, que em muitos casos, é causado pelo medo de "quebra" da aplicação à cada nova funcionalidade ou correção integrada a solução, por parte da equipe de operações, que tem como foco a estabilidade da aplicação.
 O modelo ágil é próximo ao DevOps tanto no sentido cultural, isto é, o foco está nos indivíduos e na colaboração, quanto na redução de tempo de disponibilização de software. As práticas de integração contínua, entrega contínua, testes contínuos e  infraestrutura como código, seguem justamente a ideia de não aguardar um ciclo inteiro para integrar, testar e disponibilizar, mas sim, integrar as funcionalidades assim que possível.
 
 \subsection{ITIL}
-A Information Technology Infrastructure Library (ITIL), é um conjunto de práticas definidas para o gerenciamento de serviços de TI . É uma publicação que contém 5 volumes que descrevem: Processos, procedimentos, tarefas e checklists e é utilizada por organizações para demonstrar conformidade e  medidas para melhoria de serviços. \citetexto{Davis} \newline
+A Information Technology Infrastructure Library (ITIL), é um conjunto de práticas definidas para o gerenciamento de serviços de TI. É uma publicação que contém 5 volumes que descrevem: Processos, procedimentos, tarefas e checklists e é utilizada por organizações para demonstrar conformidade e  medidas para melhoria de serviços \cite{Davis}. \newline
 Sua primeira versão foi publicada no final dos anos 80, e o número de livros e práticas cresceu com o passar dos anos, sua última publicação (ITIL V3) foi realizada no ano de 2011, e esta versão contém livros sobre: Estratégias de serviço, Design de serviço, Transição de serviço, Operação de serviço e Melhoria continuada. 
 Conforme observado por \citetexto{Borangiu2016}, métodos ágeis e ITIL possuem diferenças tanto conceituais como estruturais. Métodos ágeis são vistos como leves e flexíveis, enquanto ITIL é considerado burocrático e processual. Apesar de ambos possuírem o mesmo objetivo que é prover a entrega de valor ao negócio, no entanto, a maneira como isso é realizado é extremamente diferente para cada um destes frameworks. Enquanto métodos ágeis visam entregar rapidamente o que o cliente deseja, ITIL visa entregar serviços de TI estáveis, respeitando um conjunto de níveis de serviço e qualidade previamente acordados. O manifesto ágil favorece as interações informais entre os participantes do projeto, em oposição a um alto formalismo, que é defendido pelo ITIL.
 Dado esse contexto, é interessante observar que este é mais um ponto de dissidência presente entre as equipes de desenvolvimento e operações. Enquanto uma visa "fornecer valor" por meio da entrega rápida de funcionalidades (Dev) a outra busca um alto nível de estabilidade e satisfação do cliente (Ops), garantindo boas avaliações de nível de serviço e qualidade.
@@ -132,32 +173,34 @@ Dado esse contexto, é interessante observar que este é mais um ponto de dissid
 Nesta subseção aborda-se a origem do termo DevOps, suas principais características e práticas.
 
 \subsubsection{A origem da cultura "DevOps"}
-As "sementes" da cultura DevOps foram plantadas no ano de \textbf{2008}, pelo artigo publicado pelo belga  Patrick Debois, denominado "Agile and Operations Infrastructure: How Infra-gile Are You?" \citep{Debois2008}. A sua motivação para realização de sua pesquisa foi uma série de frustrações que ocorreram por conta de conflitos entre desenvolvedores e administradores de sistemas, ao longo de uma migração de um datacenter do governo belga.  No ano de 2008 durante conferência AGILE '08 sobre práticas ágeis, realizada em Toronto, Patrick Debois e Andrew Shafer apresentaram o trabalho construído e também criaram uma lista denominada \textbf{agile-sysadmin}, que inicialmente foi disseminada na Europa para discutir a adoção de metodologias ágeis na infraestrutura e entendermo como equipes de operação poderiam trabalhar no modelo ágil, acompanhando a equipe de desenvolvimento. Isto desencadeou uma série de estudos, confeencias e iniciativas sobre o assunto, que engajou a comunidade à torná-lo popular. 
+A ideia sobre DevOps surgiu a partir de \citetexto{Debois2008} em seu artigo denominado "Agile and Operations Infrastructure: How Infra-gile Are You?". A sua motivação para realização de sua pesquisa foi uma série de frustrações que ocorreram por conta de conflitos entre desenvolvedores e administradores de sistemas, ao longo de uma migração de um datacenter do governo belga.  No ano de 2008 durante conferência AGILE '08 sobre práticas ágeis, realizada em Toronto, Patrick Debois e Andrew Shafer apresentaram o trabalho construído e também criaram uma lista denominada \textbf{agile-sysadmin}, que inicialmente foi disseminada na Europa para discutir a adoção de metodologias ágeis na infraestrutura e entender como equipes de operação poderiam trabalhar no modelo ágil, acompanhando a equipe de desenvolvimento. Isto desencadeou uma série de estudos, conferências e iniciativas sobre o assunto, que engajou a comunidade à torná-lo popular. 
 Um outro marco importante para o DevOps foi a conferência Velocity da O'Really, realizada em 2009, aonde foi apresentado o trabalho \textbf{10+ Deploys per day: Dev and Ops Cooperation at Flickr}, por John Allspaw e Paul Hammond. Este trabalho foi um estudo de caso sobre a capacidade de implantação de mudanças no Flickr após pôr em prática a colaboração entre as equipes, priorizando a entrega de software de qualidade de maneira rápida e eficiente.
 Esse estudo foi um marco para alavancar o movimento e nesta mesma conferência, surgiu a ideia de realizar o evento \textbf{DevOpsDays}, que é realizados em diversos países com grupos locais que tem como objetivo disseminar a cultura DevOps.
 
 \subsubsection{O que é DevOps ?}
 
-\textbf{DevOps} é um termo que se tornou uma "buzzword" no mercado e  por não ser prescritivo, muitas empresas tem apresentado a definição que lhes parece correta, bem como alguns profissionais que se intitulam "DevOps", um fenômeno que pode ser descrito conforme a figura 2.
+\textbf{DevOps} é um termo que se tornou uma "buzzword" no mercado e  por não ser prescritivo, muitas empresas tem apresentado a definição que lhes parece correta, bem como alguns profissionais que se intitulam "DevOps", um fenômeno que pode ser ilustrado pela figura abaixo.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=.5]{imagens/devops_elefant.png}
-    \caption{O elefante DevOps}
+        \caption{O elefante DevOps}
+    \includegraphics[scale=.5]{imagens/devops_elephant.png}
+    \source{\cite{Microsoft2015}}
     \label{fig:elefante DevOps}
 \end{figure}
 
 
-Diferente das metodologias ágeis que possuem um manifesto ou ITIL que possui uma descrição sobre seus processos, não existe uma descrição exata sobre como "ser DevOps", pois ela é uma cultura definida por ideias e não por uma definição rigorosa e segundo \citetexto{Davis} está em constante evolução, processos e ideias tem sido discutidos ao longo dos últimos anos e pelo que se observa na comunidade, a tendência é de que permaneça assim ao longo dos próximos anos.  \newline 
+Diferente das metodologias ágeis que possuem um manifesto ou ITIL que possui uma descrição sobre seus processos, não existe uma descrição exata sobre como "ser DevOps", pois ela é uma cultura definida por ideias e não por uma definição rigorosa. Segundo \citetexto{Davis} está em constante evolução, processos e ideias tem sido discutidos ao longo dos últimos anos e pelo que se observa na comunidade, a tendência é de que permaneça assim ao longo dos próximos anos.  \newline 
 
 
-A definição proposta por \citetexto{Jabbari2016} é de que: DevOps é uma metodologia de desenvolvimento que busca eliminar os gap's existentes entre Desenvolvimento e Operações. Também pode ser dito como um paradigma, método ou conjunto de princípios e práticas que possibilitam uma melhor comunicação e colaboração, resultando em um trabalho em equipe eficiente entre as equipes de desenvolvedores e operadores.
+A definição proposta por \citetexto{Jabbari2016} é de que DevOps é uma metodologia de desenvolvimento que busca eliminar os gap's existentes entre Desenvolvimento e Operações. Também pode ser dito como um paradigma, método ou conjunto de princípios e práticas que possibilitam uma melhor comunicação e colaboração, resultando em um trabalho em equipe eficiente entre as equipes de desenvolvedores e operadores.\\
 
-Um acrônimo que é frequentemente citado nos grupos sobre DevOps é o CALMS, que significa \textbf{C}ulture, \textbf{A}utomation, \textbf{L}ean, \textbf{M}easurement and \textbf{S}haring. Ele é um framework muito útil e é frequentemente mencionado para demonstrar que DevOps não é apenas uma coisa única (como implementar uma ferramenta), mas uma abordagem mais ampla para prestação de serviço, Também trata como mehorar a colaboração, comunicação  e coordenação entre diferentes funções na organização. Segundo \citetexto{Willis}, temos as seguintes ideias sobre cada ponto:
+
+Um acrônimo que é frequentemente citado nos grupos sobre DevOps é o CALMS, que significa \textbf{C}ulture, \textbf{A}utomation, \textbf{L}ean, \textbf{M}easurement and \textbf{S}haring. Ele é um framework muito útil e é frequentemente mencionado para demonstrar que DevOps não é apenas uma tarefa única (como por exemplo, implementar uma ferramenta), mas uma abordagem mais ampla para prestação de serviços, e para isso, busca melhorar a colaboração, comunicação  e coordenação entre diferentes funções na organização. Segundo \citetexto{Willis}, temos as seguintes ideias sobre cada ponto:
 \begin{itemize}
-\item \textbf{Culture (Cultura)}: Pessoas e processos primeiro. Se você não tem cultura, todas as tentativas de automação serão inúteis, a mudança no mindset é fundamental para que a cultura prospere. Conforme a experiência de \citetexto{ELBAYADI2014} DevOps não funciona tão bem em estruturas de gerenciamento top-down. Como se trata de uma cultura inclusiva, é fundamental que exista uma aceitação/abertura  para diferentes ideias de diferentes níveis da organização. Uma comunicação abeta é frequentemente discutida como um ponto chave para impulsionar a cultura Devops. Walls (2013) diz: " A cultura DevOps foi criada por muita discussão e debate. Tradicionalmente, equipes técnicas interagem através de sistemas de chamados complexos e com procedimentos que podem ser considerados quase que rituais, o que às vezes requer intervenção da própria diretoria" (p.5);
-\item \textbf{Lean (Enxuto)}: No contexto de software, podemos pensar em "Enxuto" o ato de eliminar atividades de baixo valor e avançar de maneira mais ágil, ainda mais relevante no contexto de DevOps, são os conceitos de melhoria contínua e aceitação de falhas. Presente na mentalidade de DevOps, a busca de oportunidades para melhoria contínua está sempre presente, algumas atitudes como retrospectivas de conhecimento regulares, testes A/B de diferentes abordagens de integração para novos usuários do seu produto passam a ser interessantes.  \cite{Atlassian2018}.
-\item \textbf{Automation (Automação)}: Este é um dos pontos de partida e mais discutidos para você entender cultura. Neste ponto, as ferramentas começão a formar uma "malha" de automação para DevOps. Ferramentas de gerenciamento de releases, provisionamento, gerenciamento de configuração, integração de sistemas, monitoramento e controle, e ferramentas de orquestração são importantes pedaços desta malha;
+\item \textbf{Culture (Cultura)}: Pessoas e processos primeiro. Se você não tem cultura, todas as tentativas de automação serão inúteis, a mudança no mindset é fundamental para que a cultura prospere. Conforme a experiência de \citetexto{ELBAYADI2014} DevOps não funciona tão bem em estruturas de gerenciamento top-down. Como se trata de uma cultura inclusiva, é fundamental que exista uma aceitação/abertura  para diferentes ideias de diferentes níveis da organização. Uma comunicação aberta é frequentemente discutida como um ponto chave para impulsionar a cultura Devops. Walls (2013) diz: " A cultura DevOps foi criada por muita discussão e debate. Tradicionalmente, equipes técnicas interagem através de sistemas de chamados complexos e com procedimentos que podem ser considerados quase que rituais, o que às vezes requer intervenção da própria diretoria";
+\item \textbf{Lean (Enxuto)}: No contexto de software, podemos pensar em "Enxuto" o ato de eliminar atividades de baixo valor e avançar de maneira mais ágil, ainda mais relevante no contexto de DevOps, são os conceitos de melhoria contínua e aceitação de falhas. Presente na mentalidade de DevOps, a busca de oportunidades para melhoria contínua está sempre presente, algumas atitudes como retrospectivas de conhecimento regulares, testes A/B de diferentes abordagens de integração para novos usuários do seu produto passam a ser interessantes  \cite{Atlassian2018}.
+\item \textbf{Automation (Automação)}: Segundo \citetexto{Atlassian2018}, este é um dos pontos de partida e mais discutidos para você entender cultura. Neste ponto, as ferramentas começam a formar uma "malha" de automação para DevOps. Ferramentas de gerenciamento de releases, provisionamento, gerenciamento de configuração, integração de sistemas, monitoramento e controle, e ferramentas de orquestração são importantes pedaços desta malha;
 \item \textbf{Measureament (Medidas)}: Se você não pode medir, você não pode melhorar. Uma implantação bem sucedida de DevOps mede tudo, o mais frequentemente possível. O core do monitoramento, é ser transparente sobre indicadores de performance que fazem a diferença. 
 \item \textbf{Sharing (Compartilhar)}: Compartilhar é o "loopback" do ciclo CALMS. Criar uma cultura onde pessoas compartilham ideias e problema é o ponto crítico. Um outro ponto interessante é a maneira como histórias de sucesso estão sendo compartilhadas para ajudar a comunidade. É um ponto interessante pois além de atrair novos talentos, existe a crença de que, expondo ideias, você pode criar um excelente feedback aberto que, no final, ajuda a melhorar.
 \end{itemize}
@@ -166,17 +209,27 @@ Um acrônimo que é frequentemente citado nos grupos sobre DevOps é o CALMS, qu
 
 \subsection{Quais são as práticas que DevOps suporta? }
 Para que os times de Dev e Ops colaborem de maneira efetiva, existem alguns conjuntos de práticas que automatizam processos de entrega, build e provisionamento e os tornam mais confiáveis e menos suscetíveis à falhas humanas. Algumas das práticas de automação mais difundidas entre DevOps são: \textbf{Integração Contínua, Entrega Contínua, Testes Contínuos, Monitoramento Contínuo, Melhoria Contínua
-e Infraestrutura como código}.
+e Infraestrutura como código}. Estas práticas formam uma "esteira produção", aonde o código produzido sofre processos de transformação até chegar em sua fase final, que é a aplicação rodando e atendendo requisições de usuários
+
+\begin{figure}[h]
+    \centering
+    \caption{Pipeline de entrega em DevOps}
+    \includegraphics[scale=.7]{imagens/pipeline.jpg}
+    \source{\cite{Humble2012}}
+    \label{fig:pipeline}
+\end{figure}
+
+
 
 \subsubsection{Integração contínua}
 
-Integração contínua é um termo oriundo da metodologia ágil XP (eXtreme Programming) e utilizado em diversas metodologias. Consiste em: Integrar código alterado e/ou desenvolvido ao projeto principal na mesma frequência com que as funcionalidades são desenvolvidas, podendo ser realizado diversas vezes ao dia, ao invés de apenas uma vez. Segundo \citetexto{Fowler2006} a ideia principal por trás deste processo é verificar se as alterações ou novas funcionalidades não criaram novos defeitos no projeto já existente e cada integração é verificada por um build automatizado (incluindo testes) para detectar erros de integração o mais rápido possível, muitos times acreditam que esse tipo de abordagem leva a uma significante redução nos problemas de integração e permite que um time desenvolva software coeso mais rapidamente. As informações sobre builds, testes e implantação são armazenadas em um pipeline de implantação. Neste pipeline de implantação, constam todos os dados referentes às fases do andamento da implantação. Para utilizar integração contínua, é obrigatório adotar algumas práticas, tais como: utilizar controle de versão, usar builds automatizados, usar estes isolados, realizar commits diários no repositório, utilizar um servidor de integração, executar testes automatizados e testes de infraestrutura. É interessante observar que diferente da integração "comum", aonde o software é considerado como não funcional até que a fase de testes valide que o mesmo funcione, já na integração contínua, o software é considerado funcionado, e a cada mudança no software, um conjunto de testes automatizados é executado para garantir seu funcionamento, permitindo assim, em caso de problemas, observar as falhas existentes de maneira mais ágil, diminuindo os prejuízos de correção.  
+\textbf{Integração contínua} é um termo oriundo da metodologia ágil XP (eXtreme Programming) e utilizado em diversas metodologias. Consiste em: Integrar código alterado e/ou desenvolvido ao projeto principal na mesma frequência com que as funcionalidades são desenvolvidas, podendo ser realizado diversas vezes ao dia, ao invés de apenas uma vez. Segundo \citetexto{Fowler2006} a ideia principal por trás deste processo é verificar se as alterações ou novas funcionalidades não criaram novos defeitos no projeto já existente e cada integração é verificada por um build automatizado (incluindo testes) para detectar erros de integração o mais rápido possível, muitos times acreditam que esse tipo de abordagem leva a uma significante redução nos problemas de integração e permite que um time desenvolva software coeso mais rapidamente. As informações sobre builds, testes e implantação são armazenadas em um pipeline de implantação. Neste pipeline de implantação, constam todos os dados referentes às fases do andamento da implantação. Para utilizar integração contínua, é obrigatório adotar algumas práticas, tais como: utilizar controle de versão, usar builds automatizados, usar estes isolados, realizar commits diários no repositório, utilizar um servidor de integração, executar testes automatizados e testes de infraestrutura. É interessante observar que diferente da integração "comum", aonde o software é considerado como não funcional até que a fase de testes valide que o mesmo funcione, já na integração contínua, o software é considerado funcionado, e a cada mudança no software, um conjunto de testes automatizados é executado para garantir seu funcionamento, permitindo assim, em caso de problemas, observar as falhas existentes de maneira mais ágil, diminuindo os prejuízos de correção.  
 O objetivo desta prática é resolver problemas usuais de desenvolvimento de software de maneira mais rápida, pois integrando de maneira contínua, o processo se torna mais fluído, o que facilita na rastreabilidade de um problema. Organizações que não possuem este tipo de prática, tendem a realizar integrações após longos períodos de tempo, fazendo com que a rastreabilidade de problemas e o tempo de resolução cresça consideravelmente. Em grande parte dos casos, o servidor de integração contínua também é responsável por aplicar testes automatizados e validar os check-ins entregues por desenvolvedores, também pode realizar testes de integração, desempenho e carga, caso o resultado destes seja positivo, a nova versão do software pode ser disponibilizada para o ambiente de produção.
 
 \subsubsection{Entrega contínua}
-O objetivo da prática de \textbf{entrega contínua} é permitir que novas funcionalidades de software sejam entregues para clientes e usuários da maneira mais breve possível, trata-se de uma prática complementar à integração contínua, possibilitando a criação de pipelines de implantação automatizados. \cite{Sharma2014}. \newline
+O objetivo da prática de \textbf{entrega contínua} é permitir que novas funcionalidades de software sejam entregues para clientes e usuários da maneira mais breve possível, trata-se de uma prática complementar à integração contínua, possibilitando a criação de pipelines de implantação automatizados \cite{Sharma2014}. \newline
 Segundo \citetexto{Humble2012} a repetitividade e confiabilidade são fundamentais para a entrega contínua de software. Eles são obtidos através da automatização de todo processo , desde compilar e utilizar controle de versão para configuração, até a implantação e testes da aplicação, ou seja, a maior parte dos processos e práticas abordados em DevOps são direcionados para viabilizar as práticas de integração contínua e a entrega contínua de software. A automação é um fator crucial para esta prática, pois por meio dela, é que será possível efetuar mudanças entre estágios de criação, implantação, testes e release, realizando a mudanças entre estes como por exemplo, pressionando apenas um botão. 
-Para \citetexto{Humble2012}, esta prática possibilita aos times de desenvolvimento a entrega de software em ambientes de produção de maneira previsível, confiável e com poucos riscos ao negócio. Conforme dito esta prática visa encurtar o tempo entre realizar alterações em uma aplicação e conseguir implementá-la, garantindo que possíveis falhas sejam identificadas o mais breve possível, o que torna mais fácil de corrigi-las. \newline
+Ainda para \citetexto{Humble2012}, esta prática possibilita aos times de desenvolvimento a entrega de software em ambientes de produção de maneira previsível, confiável e com poucos riscos ao negócio. Conforme dito esta prática visa encurtar o tempo entre realizar alterações em uma aplicação e conseguir implementá-la, garantindo que possíveis falhas sejam identificadas o mais breve possível, o que torna mais fácil de corrigi-las. \newline
 \citetexto{Wotton} destacam que a entrega contínua de software tem como por objetivo:
 \begin{itemize}
 \item Entregar software de uma maneira rápida e frequente, agregando valor ao negócio e obtendo feedbacks de maneira mais breve possível;
@@ -191,18 +244,14 @@ Ainda segundo \citetexto{Wotton}, para atingir esses objetivos é  necessário a
 \item  Builds e Entrega Contínua: A partir da integração contínua são disparados os processos do pipeline de entrega, como testes, implantação e gerenciamento de releases;
 \item Automação de testes: Usualmente realizado por um servidor de integração (CI) a cada checkin realizado por desenvolvedores. O conjunto de testes devem cobrir os mais variados níveis de abstração (unidade, integração, aceitação, carga, performance e fumaça). Os testes são distribuídos conforme a necessidade dos estágios do pipeline de implantação, com o objetivo de identificar problemas o mais breve possível;
 \item Implantação automática: Implantar software de maneira automatizada, de modo que os times possam realizar esta tarefa de maneira self-service, implantando os sistemas sem dependências da equipe de operações. Este ponto é chave para a entrega contínua;
-\item Infraestrutura Como  código: Ferramentas de gerenciamento de configuração para infraestrutura permitem definir e controlar a infraestruturade forma controlada, permitindo a construção de ambientes consistentes, confiáveis e reproduzíveis de maneira automática, gerando assim a base para um pipeline de implantação confiável;
-\item Pipeline de implantação: É outro ponto chave para o processo de entrega contínua, ele fornece a visibilidade necessária sobre o andamento de todo o processo de entrega nos estágios e etapas que os releases candidates sofrem, ou seja, o caminho realizado da etapa de código fonte até a produção. Forneem também critérios para um build mover-se entre os estágios do pipeline e conhecimento para a tomada de decisão de acordo com os resultados obtidos.
+\item Infraestrutura Como  código: Ferramentas de gerenciamento de configuração para infraestrutura permitem definir e controlar a infraestrutura a partir de arquivos de definição em código, permitindo assim a construção de ambientes consistentes, confiáveis e reproduzíveis de maneira automática, gerando assim a base para um pipeline de implantação confiável;
+\item Pipeline de implantação: É outro ponto chave para o processo de entrega contínua, ele fornece a visibilidade necessária sobre o andamento de todo o processo de entrega nos estágios e etapas que os releases candidates sofrem, ou seja, o caminho realizado da etapa de código fonte até a produção. Fornecem também critérios para um build mover-se entre os estágios do pipeline e conhecimento para a tomada de decisão de acordo com os resultados obtidos.
 \end{itemize}
 
 
 \subsubsection{Testes contínuos e automatizados}
-Todos os processos em DevOps produzem código para a produção, assim que a etapa de desenvolvimento é finalizada. Isso requer que o código seja continuamente integrado e em paralelo, é necessário aplicar conjunto de testes que trabalhe com a integração destas novas funcionalidades. Com implantações sendo realizadas de maneira mais rápida e frequente, é impossível executar testes manuais  de todas funcionalidades a cada release. Testar é uma atividade multifuncional que envolve todo o time e deve ser executada continuamente, durante todo o ciclo de vida do desenvolvimento. \cite{Humble2012}.  
+Todos os processos em DevOps produzem código para a produção, assim que a etapa de desenvolvimento é finalizada. Isso requer que o código seja continuamente integrado e em paralelo, é necessário aplicar conjunto de testes que trabalhe com a integração destas novas funcionalidades. Com implantações sendo realizadas de maneira mais rápida e frequente, é impossível executar testes manuais  de todas funcionalidades a cada release. Testar é uma atividade multifuncional que envolve todo o time e deve ser executada continuamente, durante todo o ciclo de vida do desenvolvimento \cite{Humble2012}.  
 Para \citetexto{Duvall2007} não existe integração contínua sem a implementação de testes contínuos e automatizados, pois é por meio deles que os desenvolvedores e demais partes envolvidas no processo de desenvolvimento adquirem confiança sobre as mudanças realizadas realizadas no software.
-
-\subsubsection{Pipeline de implantação}
-\citetexto{Braga2015}
-
 
 \subsubsection{Infraestrutura Como Código}
 Infraestrutura como um código é uma abordagem para automação de infraestrutura baseada em práticas de desenvolvimento de software. A ênfase desta prática é em automação de rotinas consistentes e repetitivas, para provisionamento e mudança de configurações em sistemas. As mudanças são feitas em arquivos de definição e após isso, e estas são realizadas de maneira autônoma, incluindo a validação destas alterações.
@@ -213,26 +262,276 @@ Um benefícios de transformar a infraestrutura em código é a possibilidade de 
 Como principal desvantagem, podemos pensar que para versionar a configuração, será exigido um tempo maior. A instalação manual de um servidor geralmente é rápida, porém, não é escalável. Já a definição da infra em arquivos de definição pode ser mais custosa, principalmente se o operador não for experiente no assunto.
 
 \subsection{Trabalhos relacionados}
+O trabalho realizado por \citetexto{Kerzazi2016} realiza o mapeamento de atividades e áreas de conhecimento consideradas importantes para profissionais que atuam como "DevOps / Release Engineers", este mapeamento foi realizado em Setembro de 2015, a partir da análise de 211 postagens de emprego realizadas no site monster.com, considerado um dos maiores sites de anúncios de emprego no mundo. Esta análise escolheu, de maneira randômica, 119 postagens de emprego realizadas nos Estados Unidos, 33 no Canadá, 49 no Reino Unido, 6 na Austrália e 4 na índia.  De maneira resumida, os autores realizaram a análise de maneira qualitativa manual de 144 postagens, para entender melhor as responsabilidades e deveres desejados no perfil destes profissionais. Os resultados desta análise foram utilizados para a elaboração de parte do questionário deste presente estudo e também para o mapeamento de práticas, habilidades e responsabilidades destes profissionais. As perguntas \textbf{22 e 23} são compostas a partir das habilidades mapeadas por este trabalho.\newline
+Já \citetexto{Jabbari2016} apresenta um mapeamento sistemático sobre o que é DevOps, explanando suas definições e práticas. O objetivo deste trabalho era além de realizar um mapeamento das práticas associadas a DevOps, entender quais eram as diferenças entre DevOps e outros métodos de desenvolvimento de software, e como resultado, foi proposta a definição de que: DevOps é uma metodologia de desenvolvimento entre equipes de Desenvolvimento e Operações, que tem como ênfase a comunicação e colaboração, integração contínua, Quality Assurance e entrega de implantações de maneira automatizada, utilizando um conjunto de práticas de desenvolvimento de software. Ainda, entende que DevOps é uma extensão dos métodos ágeis e que práticas de desenvolvimento ágil são a base para suportar as práticas contidas em DevOps. \newline
+\citetexto{Braga2015} realiza um panorama sobre as práticas DevOps utilizadas nas indústrias de software brasileiras, além disso, também realiza um mapeamento sobre quais metodologias ágeis estão relacionadas às práticas de DevOps. \newline \citetexto{Levita2017} teve como objetivo compreender como empresas de grande porte, que utilizam práticas de DevOps no processo de desenvolvimento de software se organizam para atingir a agilidade desejada na implantação das suas aplicações. Em seu trabalho, foi realizada a construção de questionários para cada grupo de atividades do framework \textbf{CALMS}, obtendo níveis de maturidade dos entrevistados em cada grupo de práticas em DevOps. \newline
+O trabalho proposto pretende realizar um survey direcionado para profissionais que trabalham em companhias que praticam ou que estão em processo de adoção da cultura DevOps, com o objetivo de mapear quais práticas de automação e colaboração estão em uso e entender o nível de maturidade sobre estas práticas nas organizações, o que acaba tornando-se um apanhado geral dos trabalhos citados acima, mas voltado para o contexto do Brasil.
+Dessa forma, o trabalho pretende utilizar critérios de avaliação semelhantes aos utilizados por \citetexto{Levita2017} e \citetexto{Braga2015} no sentido de avaliar o nível de maturidade de processos. \newline
+Os trabalhos de \citetexto{Kerzazi2016} e \citetexto{Jabbari2016} fornecem uma base sólida para o mapeamento de práticas utilizadas por profissionais atuantes nos ambientes DevOps, mas são voltados para realidades de outros países. No presente trabalho, buscamos entender se os pontos observados (habilidades e áreas de conhecimento) por \citetexto{Kerzazi2016} são aderentes à realidade encontrada no Brasil.
+
+
 
 %=======================================================================
 % Metodologia
 %=======================================================================
 \section{Metodologia}
-A metodologia empregada neste trabalho de pesquisa é um survey do tipo descritivo. \cite{Miguel}. Neste tipo de survey, busca-se o entendimento da relevância de certo fenômeno, bem como descrever a distribuição do fenômeno da população, no caso deste survey, obter "Um panorama sobre experiências e práticas de profissionais em ambientes DevOps". O objetivo primário não é desenvolvimento ou
-teste de teorias, mas possibilitar fornecer subsídios para a construção de teorias ou refinamentos. Desta forma, requer a definição de questões a serem endereçadas com argumentação lógica para a escolha da amostra. Tais questões seguem detalhadas na seção Projeto do Survey.
-Este survey organiza-se nas seguintes etapas de pesquisa: (i) base teórica, (ii) projeto do survey, (iii) teste piloto e coleta de dados, (iv) análise de dados e síntese.
+Esta seção organiza-se nas seguintes etapas de pesquisa: (i) Delineamento de pesquisa, (ii) Definição da unidade de Análise, (iii) projeto do survey, (iv) coleta de dados, (v) análise de dados.
 
-\subsection{Base teórica}
-A etapa de conceituação teórica define os elementos introdutórios além de outros elementos fundamentais deste trabalho de pesquisa. Nesta etapa define-se os conceitos sobre DevOps
+\subsection{Delineamento de pesquisa}
+A metodologia empregada neste trabalho de pesquisa é um survey do tipo descritivo \cite{Miguel}. Neste tipo de survey, busca-se o entendimento da relevância de certo fenômeno, bem como descrever a distribuição do fenômeno da população, no caso deste survey, obter "Um panorama sobre experiências e práticas de profissionais em ambientes DevOps".  Os levantamentos bibliográficos necessários foram realizados através de pesquisas sobre palavras-chave envolvendo os termos "DevOps", "Infraestrutura-ágil" e "métodos ágeis" "entrega e integração contínua" nas fontes de pesquisa: IEEEXplore Digital Library\footnote{\url{https://ieeexplore.ieee.org}}, EBSCOHost\footnote{\url{https://search.ebscohost.com/}}, Google Scholar\footnote{\url{https://scholar.google.com.br/}} e Portal Períodico Capes\footnote{\url{https://periodicos.capes.gov.br}}.
+%arrumar links e footnotes
+O objetivo primário não é desenvolvimento ou teste de teorias, mas possibilitar fornecer subsídios para a construção de teorias ou refinamentos. Desta forma, requer a definição de questões a serem endereçadas com argumentação lógica para a escolha da amostra. Tais questões seguem detalhadas na seção Projeto do Survey.
+
+\subsection{Definição da unidade de Análise}
+O cálculo do tamanho da amostra considera os seguintes parâmetros \citetexto{SurveyMonkey} tamanho da população: 100 participantes dos grupos \textit{DevOps/SRE Porto Alegre} e \textit{Docker Porto Alegre}no aplicativo Telegram\footnote{\url{https://web.telegram.org}}. Grupos que mensalmente promovem encontros para debater o tema DevOps, os participantes destes grupos também promovem palestras em eventos como o The Developer's Conference\footnote{\url{http://www.thedevelopersconference.com.br}} e DevOpsdays Porto Alegre\footnote{\url{https://devopsdays.org/events/2019-porto-alegre/welcome/}} realizados anualmente na cidade de Porto Alegre. Margem de erro 11\%; grau de confiança: 90\%; e o tamanho da amostra ideal é de 36 participantes.
+
+A amostra é do tipo não probabilística por conveniência \cite{Freitas2010},pois não houve distinção na escolha dos participantes presentes no grupo. 
+
+A pesquisa foi disponibilizada de via formulário \textit{online} e enviada para 100 profissionais. Houve um retorno de 33 respostas, sendo desconsideradas 3 respostas por não preencherem completamente todas as perguntas, delimitando a amostra de pesquisa em 30 participantes. Assim, houve uma taxa de retorno de 30\% (total de questionários válidos (30) / total de questionários enviados (100)).
+
+Apesar do tamanho amostral ser inferior ao considerado ao ideal, o tamanho da amostra atual ainda é considerado o mínimo para que um resultado seja considerado confiável. \citetexto{Freitas2010}, observa a "lei dos grandes números " e exemplifica que amostras inferiores a 30 respostas, podem tanto mostrar um valor errôneo, quanto relatar a realidade que se pode comprovar.
+
+Neste sentido é importante compreender o perfil do público-alvo, quanto ao tempo de experiência no setor de TI: 3\% tem de 1 a 2 anos, 10\% de 3 a 5 anos, 27\% de 6 a 10 anos e outros 60\% acima de 10 anos de experiência. Assim sendo 86,66\% dos participantes tem acima de 5 anos de experiência, o que qualifica a amostra com "credibilidade citada por \citetexto{Freitas2010}. Portanto, apesar da amostra abaixo do cálculo amostral ideal (36), considerando a argumentação de \citetexto{Freitas2010}, e o perfil do público-alvo, pode-se considerar a amostra de 30 respondentes como confiável, pois pode retratar uma realidade e dar credibilidade e validade ao estudo.  
+
+\subsection{Projeto do Survey}
+A coleta de foi realizada por meio de um Survey disponibilizado de maneira \textit{online}. As questões foram subdivididas da seguinte forma:
+\textbf{Questões 1 à 8}:  Relacionadas aos seguintes dados destes profissionais: Tempo de experiência, localidade em que trabalha, cargo e ramo de negócio de sua companhia; \textbf{Questões 9 à 15}: Analisa-se o nível de colaboração e divisão de responsabilidades entre as equipes, os constructos de \citetexto{Braga2015} e \citetexto{Levita2017} serviram de suporte para a elaboração destas questões;\textbf{Questões 15 à 21}: Analisa-se o nível de maturidade relacionado as práticas DevOps realizadas por estes profissionais, práticas que foram levantadas por \citetexto{Braga2015}. Já os constructos  de \citetexto{Levita2017} foram também utilizados como suporte para elaboração das respostas e relacionamento com os níveis de maturidade propostos; \textbf{Questões 22 e 23}: Analisa-se se as ferramentas e práticas levantadas por \citetexto{Kerzazi2016}, são relevantes para os profissionais brasileiros;
+\textbf{Questão 24}: Analisa-se como estes profissionais estão se preparando em termos de estudo para este novo paradigma, bem como quais são suas fontes de informação sobre novas ferramentas e práticas; \textbf{Questões 25 à 27}: Analisa-se a opinião destes profissionais sobre quais são as dificuldades e ganhos na adoção deste novo paradigma.
+
+ Como base para as questões 9 à 21, elaborou-se uma escala adaptada sobre o modelo proposto por \citetexto{Isaca2012} em COBIT 5, no qual propõe um modelo de capacidade de processo definido em 5 níveis definidos abaixo: \textbf{Maturidade 5 - Melhoria Contínua}: Prática em processo de melhoria contínua. Time possui excelência na realização da prática, que foi completamente assimilada na cultura da organização; \textbf{Maturidade 4 - Avançado}: Prática otimizada pelo time e que se torna parte da cultura da organização. Resultados de negócio sempre visíveis pelo corpo gestor da organização; \textbf{Maturidade 3 - Gerenciado}: Prática sistematizada pelo time ou organização. Resultados começam a tornar-se visíveis pela organização; \textbf{Maturidade 2 - Consciente}: Prática embrionária no time ou organização. Resultados iniciais e ainda inconsistentes; \textbf{Maturidade 1 - Inicial}: Ausência de práticas ou iniciativas \textit{ad hoc} realizadas isoladamente por algumas pessoas;
 
 
-\subsection{Trabalhos relacionados}
-O trabalho realizado por \citetexto{Kerzazi2016} realiza o mapeamento de atividades e áreas de conhecimento consideradas importantes para profissionais que atuam como "DevOps / Release Engineers", este mapeamento foi realizado em Setembro de 2015, a partir da análise de 211 postagens de emprego realizadas no site monster.com, considerado um dos maiores sites de anúncios de emprego no mundo. Esta análise escolheu, de maneira randômica, 119 postagens de emprego realizadas nos Estados Unidos, 33 no Canadá, 49 no Reino Unido, 6 na Austrália e 4 na índia.  De maneira resumida, os autores realizaram a análise de maneira qualitativa manual de 144 postagens, para entender melhor as responsabilidades e deveres desejados no perfil destes profissionais. Os resultados desta análise foram utilizados para a elaboração de parte do questionário deste presente estudo. As perguntas \textbf{22 e 23} são compostas a partir das habilidades mapeadas por este trabalho.
-Para a construção sobre o que é DevOps e quais são suas práticas, 
+ \subsection{Coleta de Dados}
+ \subsection{Análise de dados}
+Para análise dos dados utilizou-se parâmetros básicos da estatística descritiva como: Média, Moda e mediana. Esses parâmetros são observados em especial nas questões 9 à 25, aonde encontram-se dois tipos de escala: uma adaptada do modelo proposto em COBIT 5 e descrita na seção de projeto do survey, que atende às questões 9 à 21, já às questões 22 à 24 utilizam um modelo de escala tipo Likert, que são descritas na seção de análise de resultados de cada pergunta.
 
+O relatório final apresenta uma síntese da maturidade das práticas DevOps realizadas pelo grupo de profissionais pesquisados, no qual se apresenta visualmente a síntese dos dados estatísticos de maturidade. Para algumas questões em específico, optou-se pelo uso da representação da síntese dos resultados por meio de gráficos do tipo boxplot. Por meio destas representações buscou-se apresentar valores discrepantes nas respostas enviadas pelos entrevistados.
+
+\begin{figure}[H]
+    \centering
+    \caption{Exemplo de box plot e as estatísticas por ele representadas}
+       \includegraphics[scale=.6]{imagens/resumo-cinco-numeros-box-plot.jpg}
+        \source{\cite{EDTIBoxPlot}}
+       % \source{Fonte: Elaborado pelo autor}
+\end{figure}
+
+Em um boxplot são apresentadas 5 estatísticas: o mínimo, o primeiro quartil (Q1), a mediana, o terceiro quartil (Q3) e o máximo. Esses valores também são conhecidos como resumo dos cinco números.
+O grande objetivo desta análise gráfica é verificar a distribuição dos dados. Assim, as possíveis conclusões são: Centro dos dados (a média ou mediana), amplitude dos dados (mínimo - máximo), a simetria ou assimetria do conjunto de dados e a presença de outliers.
+No centro do quadrado, temos uma linha que indica o valor da mediana. A dispersão é representada pela amplitude do gráfico, que pode ser calculada como valor máximo ou mínimo. Quanto maior for a amplitude, maior a variação dos dados.
+O retângulo contém 50\% dos valores do conjunto de dados. A posição da linha mediana no retângulo informa sobre a assimetria da distribuição. Quando uma distribuição é considerada simétrica, a mediana ocupa o centro do retângulo. Caso o valor da mediana esteja mais próximo de Q1, os valores são positivamente assimétricos. Caso sejam mais próximos de Q3, são negativamente assimétricos \cite{EDTIBoxPlot}.
+
+
+
+\section{Uma análise sobre o panorama de experiências profissionais em ambientes DevOps}
+Nesta seção é realizada a análise dos resultados do Survey e subdivide-se da seguinte forma: (a) dados sócio-demográficos, (b) Análise de maturidade sobre práticas DevOps, (c) ferramentas e atividades, (d) fontes de informação, e (e) dados qualitativos sobre dificuldades e ganhos na adoção do DevOps.
+\subsection{Dados sócio-demográficos}
+O público alvo desta pesquisa é composto por profissionais da área de Desenvolvimento e Operações de companhias que praticam ou estão em fase de adoção da cultura DevOps. Observa-se na Figura \ref{fig:cargos} que 30\% dos entrevistados estão atualmente trabalhando no como Desenvolvedores de Software e outros 20\% na área de Infraestrutura de TI.  Cabe destacar que 6,67\% dos profissionais optaram por não declarar seu cargo, esta questão foi considerada opcional, com a intenção de não afastar possíveis respondentes que de alguma forma poderiam sentir-se de desconfortáveis em relação ao sigilo da pesquisa. 
+
+\begin{figure}[H]
+    \centering
+    \caption{Cargo dos entrevistados}
+       \includegraphics[scale=.6]{imagens/cargos_pbi.JPG}
+       \source{Elaborado pelo autor}
+    \label{fig:cargos}
+\end{figure}
+
+Observa-se na Figura \ref{fig:experiencias} que quando questionados sobre qual seria seu campo de experiência predominante, ou seja, na área em que atuou por um maior período de tempo, 63,3\% dos entrevistados respondeu que suas experiências estão predominantemente ligadas à área de desenvolvimento de software (Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..), outros 23,33\% ligados à infraestrutura de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..).
+
+\begin{figure}[H]
+    \centering
+       \caption{Resumo de experiências dos entrevistados}
+       \includegraphics[scale=.6]{imagens/exp_pbi.jpg}
+      \source{Elaborado pelo autor}
+    \label{fig:experiencias}
+\end{figure}
+
+Na Figura \ref{fig:expAns} podemos observar que 60\% dos entrevistados possui mais de 10 anos de experiência na área de TI, bem como outros 26,67\% possui entre 6 a 10 anos de experiência. Quando indagados sobre o tempo de experiência gerenciando/utilizando ferramentas de automação voltadas para DevOps, nota-se que 43,33\% dos entrevistados possuem de 1 a 2 anos de experiência e apenas 13,33\% está ainda em fase de pesquisa sobre ferramentas de apoio utilizadas em DevOps. 
+
+
+\begin{figure}[H]
+    \centering
+     \caption{Resumo de experiências profissionais (Em anos)}
+     \includegraphics[scale=.5]{imagens/tempoExperiencia_pbi.jpg}
+     \source{Elaborado pelo autor}
+    \label{fig:expAns}
+\end{figure}
+
+
+Para classificar o porte das empresas e outras informações, o Sebrae utiliza como base pesquisas divulgadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE) conforme o número de empregados: micro, pequena, média e grande empresa.\citep{SEBRAE2017} 
+Conforme a Figura \ref{fig:PorteEmpresas}, podemos observar que 53\% dos entrevistados trabalham em empresas classificadas como grandes, 16,67 \% em médias,  também 16,67\% em micro e os 13,33\% restantes em pequenas empresas. 
+
+\begin{figure}[H]
+    \centering
+    \caption{Porte das empresas}
+       \includegraphics[scale=.6]{imagens/colaboradores_pbi.JPG}
+        \source{Elaborado pelo autor}
+     \label{fig:PorteEmpresas}
+    \end{figure}
+
+
+A Figura \ref{fig:colaboradores} apresenta a distribuição das empresas por atividade econômica. Observa-se que 46,67\% dos entrevistados estão relacionados à empresas de tecnologia/produção de software e outros 20\% estão relacionados à empresas de serviços financeiros. Os demais entrevistados estão divididos entre as mais diversas atividades, como Educação, Orgãos governamentais, Varejo e Comércio, etc..
+
+\begin{figure}[!htbp]
+    \centering
+    \caption{Atividade Econômica}
+       \includegraphics[scale=.6]{imagens/atividadeEcon_PBI.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:colaboradores}
+\end{figure}
+
+
+\subsection{Análise sobre o nível de colaboração entre as equipes}
+Esta seção realiza uma análise individual das questões 9 à 15, estes questionamentos visam entender em que estágio de maturidade está o compartilhamento de tarefas, ferramentas, oportunidades e responsabilidades entre as equipes. No capítulo final desta seção é realizada uma síntese com os valores médios de maturidade para cada questão analisada.
+
+\subsubsection{Equipes cross-funcionais}
+Observa-se na Figura \ref{fig:crossFuncionais} que grande parte dos entrevistados já trabalha (ao menos em alguns projetos), em um time cross-funcional. Este é um dos grandes pontos a serem levados em consideração quando se pensa em adotar a cultura DevOps. A ideia por trás desta prática e quebrar as barreiras existentes entre os times e sistematizar o sentimento de que todos os indivíduos são responsáveis pelo processo de entrega.
+Como podemos observar, apenas (7) 23,33\% dos entrevistados ainda não trabalha desta forma. 
+\begin{figure}[H]
+    \centering
+    \caption{Sua organização trabalha com times cross-funcionais?}
+       \includegraphics[scale=.6]{imagens/crossFuncionais_PBI.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:crossFuncionais}
+\end{figure}
+Algumas organizações denominam estes times como Squad("Esquadra"), muitas empresas se inspiram no modelo proposto \citetexto{SPOTIFY}, aonde cada squad funciona como uma mini-startup. A equipe é auto-organizada e possui autonomia suficiente para decidir seus processos internos.
+
+\subsubsection{Compartilhamento de conhecimento entre os times}
+Esta pergunta tem como objetivo analisar o quanto os times compartilham suas informações, na Figura \ref{fig:compartConhecimento} é possível observar que na organização de (14) 46,67\% dos entrevistados as informações são compartilhadas apenas quando requisitado, para outros (11) 36,67 \% as informações estão disponíveis para todos e em formatos dinâmicos, como wikis e salas de bate-papo (plataformas como Slack e MS Teams). 
+\begin{figure}[H]
+    \centering
+    \caption{Como você descreveria o compartilhamento de conhecimento entre times?}
+       \includegraphics[scale=.6]{imagens/compartilhamentoConhecimento.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:compartConhecimento}
+\end{figure}
+Esta pergunta está diretamente ligada ao \textbf{S - Sharing} do framework CALMS e visa entender o quão dinâmica e sem obstruções é a comunicação entre os times. 
+
+
+\subsubsection{Compartilhamento de ferramentas entre Dev e Ops}
+Na Figura \ref{fig:compartFerramentas} observa-se que (14) 46,67\% dos entrevistados ainda realiza o compartilhamento de ferramentas de forma parcial, enquanto outros 7 (23,33\%) possuem suas ferramentas integradas, mas não possuem um fluxo único de entrega. Apenas 4 (13,33\%) dos entrevistados possuem um fluxo único de entrega e com todas as suas ferramentas integradas.
+Considerando os níveis de maturidade propostos, os resultados se enquadram nos respectivos níveis: Gerenciado (46,67\%), Avançado (23,33\%) e Melhoria contínua (13,33\%).
+\begin{figure}[H]
+    \centering
+    \caption{Compartilhamento de ferramentas entre os times de Dev e Ops}
+       \includegraphics[scale=.6]{imagens/compartilhamentoFerramentas.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:compartFerramentas}
+\end{figure}
+
+Embora DevOps o foco em DevOps seja o mesmo que o descrito no manifesto ágil (Indivíduos e interações em detrimento a processos e ferramentas), ter um conjunto único de ferramentas que forme de fato uma "esteira" de entrega de software pode otimizar a entrega e diminuir a pressão constante entre os times.
+
+\subsubsection{Colaboração, divisão de riscos, inovação e aprendizado}
+Quando questionados sobre o nível de colaboração entre os times, observa-se que os entrevistados encontram-se bem distribuídos entre os níveis de maturidade propostos. A partir da Figura \ref{fig:colaboracaoInovacao}, percebe-se que 10 (30\%) deles já atingiram o nível de melhoria contínua neste quesito, já 8 (26,67\%) estão no nível avançado e outros 5 (20\%) estão em um nível gerenciado. 
+\begin{figure}[H]
+    \centering
+    \caption{Como o seu time colabora, divide riscos, inova e aprende?}
+       \includegraphics[scale=.6]{imagens/colaboracaoInovacao.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:colaboracaoInovacao}
+\end{figure}
+
+\subsubsection{Planejamento, priorização e agendamento do trabalho}
+Ainda seguindo na linha de divisão de responsabilidades, os entrevistados responderam sobre como o trabalho é planejado, priorizado e agendado dentro de suas companhias. Observa-se na Figura \ref{fig:planejamentoTrabalho} que as respostas não acompanham a tendência em relação a questão de colaboração, 12 (40\%) dos entrevistados dizem que há uma tentativa de priorização de trabalho dentro das equipes, mas de maneira irregular. 
+\begin{figure}[H]
+    \centering
+    \caption{Como é planejado, priorizado e agendado o trabalho?}
+       \includegraphics[scale=.6]{imagens/priorizacao.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:planejamentoTrabalho}
+\end{figure}
+Observa-se neste item que apesar dos entrevistados responderem que possuem um alto nível de colaboração entre as equipes, ainda não há um processo bem estabelecido quanto ao planejamento de trabalho. Ponto que pode causar desconfortos entre os times quanto a definição de prioridades em suas rotinas.
+
+\subsection{Análise de maturidade sobre práticas DevOps}
+Realiza-se nesta seção uma análise sobre o nível de maturidade das técnicas de automação utilizadas em DevOps. Analisa-se em particular as técnicas de Infraestrutura-como-Código, Monitoramento Contínuo, Entrega/Integração Contínua, Testes Contínuos e Melhoria Continua. Para tanto, utilizamos a escala citada no seção de Projeto do Survey.  Cabe destacar que esta pesquisa considera uma amostra de análise, ou seja, os dados analisados apontam para o nível de maturidade de uma determinada amostra de profissionais inseridos em companhias que praticam a cultura DevOps e suas práticas de automação.
+
+A Tabela 1 apresenta os resultados obtidos nas perguntas 14, 16, 18, 19, 20 e 21. Segundo os resultados, observa-se que grande parte dos entrevistados ainda estão nos estágios iniciais de maturidade em relação as práticas de automação. Encontra-se na seção de anexos o gráfico de tipo Likert representando a distribuição das respostas.
+
+\begin{table}[H]
+\footnotesize
+\caption{Distribuição dos níveis de maturidade}
+    \begin{tabularx}{\columnwidth}{xxxxxx}
+    \hline
+       Prática                  &    Inicial &    Consciente &    Gerenciado &    Avançado &    Melhoria contínua \\ \hline 
+       Infra-Como-Código        &    6 (20,00\%)  &    11 (36,67\%)    &    4 (13,33\%)    &    6 (20,00\%)  &    3 (10,00\%)           \\
+       Testes   contínuos       &    11 (36,67\%) &    3 (10,00\%)    &    7 (23,33\%)    &    3 (10,00\%)  &    6 (20,00\%)           \\
+       Integração   contínua    &    5 (16,67\%)  &    7 (23,33\%)    &    11 (36,67\%)    &    4 (13,33\%)  &    3 (10,00\%)           \\
+       Entrega   contínua       &    6 (20,00\%) &    6 (20,00\%)    &    8 (26,67\%)    &    7 (23,33\%)  &    3 (10,00\%)           \\ 
+       Monitoramento   contínuo &    3 (10,00\%) &    9 (30,00\%)    &    7 (23,33\%)    &    7 (20,00\%)  &    3 (16,67\%)           \\
+       Melhoria   contínua      &    4 (13,33\%) &    13 (43,33\%)    &    4 (13,33\%)    &    5 (16,67\%)  &    4 (13,33\%)           \\ \hline
+    \end{tabularx}
+    \source{Elaborado pelo autor}
+\end{table}
+
+Observa-se na Figura \ref{fig:pratDevOps} que o nível médio de maturidade em geral é igual a \textbf{2,77}, ou seja, grande parte dos entrevistados está se aproximando ao correspondente ao nível \textbf{gerenciado}, ou que também significa que as práticas foram sistematizadas pelo time ou organização e os resultados começaram a tornar-se visíveis pela organização. Observa-se também na Figura \ref{fig:praDevOps} os valores para média, moda e mediana para cada prática. 
+\begin{figure}[H]
+    \centering
+    \caption{Análise sobre as práticas DevOps}
+       \includegraphics[scale=.6]{imagens/maturidade_radar.JPG}
+        \source{Elaborado pelo autor}
+    \label{fig:pratDevOps}
+\end{figure}
+
+Cabe lembrar que podem existir distorções de análise, principalmente quando existem resultados extremos de uma escala. Na seção de anexos é possível encontrar os valores de média, moda e mediana para cada grupo de entrevistados, bem como o gráfico de análise de maturidade correspondente (também conhecidos como outliers).
+
+
+\subsection{Análise sobre as ferramentas e atividades em DevOps}
+Observa-se na \ref{fig:importanciapratDevOps} que as atividades consideradas "core" mapeadas por \citetexto{Kerzazi2016}, são de fato consideradas relevantes para os entrevistados. Na questão 23 utiliza-se uma escala de 1 à 5, onde: 1 = Sem importância e 5 = Muito importante.
+Optou-se pela apresentação dos resultados em um gráfico em formato de boxplot pela facilidade na análise dos resultados.  A partir desta representação gráfica é percebe-se que há uma grande variação entre os níveis Razoavelmente importante / Muito importante nas respostas dos entrevistados. Em geral, o valor mediano das respostas classificou as ferramentas como Importantes. Também é possível observar que os tópicos de que são classificados como mais importantes são os tópicos de monitoramento e integração (Controle de códigos fonte, estratégias de branch..). 
+Este tipo de apresentação também facilita a detecção de valores discrepantes em relação às demais respostas, conforme observa-se na Figura \ref{fig:importanciapratDevOps} existem outliers para as seguintes práticas: Controle de código fonte (Uma resposta com nota 1), Monitoramento (Uma resposta com nota 2) e Otimização de pipelines (Uma resposta com valor 1).
+
+\begin{figure}[H]
+    \centering
+    \caption{Importância das atividades segundo entrevistados}
+       \includegraphics[scale=.6]{imagens/Rplot.png}
+        \source{Elaborado pelo autor}
+    \label{fig:importanciapratDevOps}
+\end{figure}
+
+
+\subsection{Análise sobre a opinião dos profissionais}
+Nesta seção é realizada uma análise sobre as questões 22 à 27. Esta seção é sub-dividida em 5 partes: (I) Análise sobre relevância de conjuntos de ferramentas voltadas para DevOps,(II) Análise sobre como estes profissionais estão se preparando em termos de estudo para este novo paradigma, (III) Os principais benefícios e dificuldades, segundo a opinião dos profissionais.
+
+\subsubsection{Quais são os recursos  utilizados por estes profissionais para adquirir novos conhecimentos?}
+A pergunta \textbf{24} tem como tem como objetivo realizar uma breve análise sobre quais são as principais fontes de informação utilizadas por profissionais para aprendizagem sobre o tópico DevOps. Observa-se na Figura \ref{fig:fontesConhecimento} que segundo os entrevistados, as fontes de busca sobre o assunto estão prioritariamente relacionadas a conteúdos online, como youtube, blogs técnicos, fóruns (Stack overflow,  Reddit, etc..) bem como sites de treinamentos Online. Enquanto opções como cursos presenciais e faculdade possuem uma menor adesão. Os dados brutos sobre cada tópico encontram-se na seção de anexos.
+
+\begin{figure}[!h]
+    \centering
+    \caption{Fontes de informação sobre DevOps}
+       \includegraphics[scale=.7]{imagens/questao24.png}
+       \source{Elaborado pelo autor}
+    \label{fig:fontesConhecimento}
+\end{figure}
+\subsubsection{Principais benefícios, dificuldades e opiniões sobre a cultura DevOps}
+Nesta subseção analisa-se os resultados obtidos nas questões 25, 26 e 27. O objetivo destas questões é entender, segundo o ponto de vista dos entrevistados, quais são os principais benefícios, desafios e razões para não adotar a cultura DevOps. Para tanto,  uma questão baseada rankeamento foi utilizada  (questão 25), baseado nos benefícios levantados por \citetexto{Braga2015}, foi elaborada uma série de possíveis respostas e solicitado aos entrevistados que elencassem do benefício mais importante ao menos importante. Na figura \textcolor{red}{X} observa-se os resultados.
+
+\begin{table}
+\footnotesize
+    \begin{tabularx}{\columnwidth}{XXXXXXX}
+       Colocação &    A entrega contínua   possibilita uma melhoria na eficiência dos deploys realizados &    Melhoria na   habilidade de monitorar, alertar e auditar mudanças no ambiente de produção &    Obter transparência   entre qualidade das aplicações e performance da infraestrutura de rede &    Os conceitos de   infraestrutura-como-código propiciam um melhor conhecimento para os   desenvolvedores sobre os ambientes  &    Aumento na   resiliência e recuperações de desastres, dado que os ambientes são altamente   reproduzíveis &    Quebra de   barreiras entre equipes de desenvolvimento e operações \\ \hline
+       1        & 11                                                                                    & 9                                                                                            & 4                                                                                               & 2                                                                                                                                                                  & 2                                                                                                            & 1                                                                                                                                                                                                \\
+       2        & 11                                                                                    & 6                                                                                            & 4                                                                                               & 2                                                                                                                                                                  & 4                                                                                                            & 0                                                                                                                                                                                                \\
+       3        & 1                                                                                     & 8                                                                                            & 9                                                                                               & 3                                                                                                                                                                  & 5                                                                                                            & 2                                                                                                                                                                                                \\
+       4        & 4                                                                                     & 5                                                                                            & 3                                                                                               & 7                                                                                                                                                                  & 5                                                                                                            & 2                                                                                                                                                                                                \\
+       5        & 2                                                                                     & 1                                                                                            & 6                                                                                               & 8                                                                                                                                                                  & 8                                                                                                            & 2                                                                                                                                                                                                \\
+       6        & 1                                                                                     & 1                                                                                            & 6                                                                                               & 6                                                                                                                                                                  & 5                                                                                                            & 7                                                                                                                                                                                                \\
+       7        & 0                                                                                     & 0                                                                                            & 1                                                                                               & 3                                                                                                                                                                  & 1                                                                                                            & 15                                                                                                                                                                                               \\
+    \end{tabularx}
+\end{table}
+
+Já as perguntas 26 e 27 são questões abertas e que foram qualitativamente analisadas. Na questão 26 os entrevistados são questionados sobre as principais dificuldades encontradas ao iniciar a prática da cultura DevOps e na questão 27 são questionados sobre quais motivos os fariam não adotar a cultura DevOps.
+
+Em uma breve análise qualitativa é possível observar que como principais dificuldades ao iniciar a prática da cultura DevOps estão os desafios técnicos em dominar os conjuntos de ferramentas bem como a quebra de barreiras culturais dentro (ou silos funcionais) dentro das companhias, como frases mais decorrentes é possível observar: "Falta de apoio de lideranças", "Curva de aprendizado ou dificuldades de encontrar materiais / profissionais no Brasil" e "Barreiras culturais". Já para os motivos que impediriam a adoção da cultura DevOps estão relacionados tópicos como valores a serem investidos e novamente, as barreiras culturais e observa-se como principais frases: "Falta de interesse/vontade", "Falta de apoio/recursos por parte de lideranças". As respostas na integra encontram-se na seção de anexos.
+
+Dada a baixa adesão destas duas questões, tornou-se inviável realizar uma análise mais profunda sobre estes dois tópicos.
+
+\section{Conclusão}
+Este artigo propôs-se a realizar um panorama sobre o nível de maturidade das práticas DevOps para profissionais brasileiros. Para tanto, buscou-se estudos relacionados ao tema DevOps, delimitando quais são suas práticas de automação, atividades  e ferramentas relacionadas ao cotidiano dos profissionais. Os artigos relacionados encontrados 
 %=======================================================================
 % Resumo em língua estrangeira (sim, é aqui mesmo).
 %
+
+
+
 % O idioma usado aqui deve necessariamente aparecer nos parâmetros do
 % \documentclass, no início do documento.
 %=======================================================================
@@ -244,6 +543,34 @@ Para a construção sobre o que é DevOps e quais são suas práticas,
 
 
 \bibliography{TCC_DevOps}
+
+
+\appendix
+
+\section{Questionário }
+
+\begin{table}[H]
+\footnotesize
+   \begin{tabularx}{\columnwidth}{XX}
+    \hline
+    \textbf{Quais foram as suas principais dificuldades ao iniciar suas atividades em um ambiente DevOps?}                                                                                                                                                                                                                                  & \textbf{O que faria você não adotar a cultura DevOps em sua organização?}                                                                                            \\ \hline
+       Convencer   a lideranças sobre a importância da cultura para que eles comprem a ideia,   entendo que o apoio das lideranças precisa estar alinhado, em seguida   implantar as ferramentas base para mostrar o seu devido valor e a partir daí   iniciar a evangelização e para os departamentos os incluindo nos processos. &    Não                                                                                                                                                      \\ \hline
+       Treinamentos   para entender as ferramentas e boas práticas.                                                                                                                                                                                                                                                                &    A falta   de investimento e apoio para utilizar a cultura devops.                                                                                        \\ \hline
+    Montar um ambiente de produção estável                                                                                                                                                                                                                                                                                         &    Nada                                                                                                                                                     \\ \hline
+       Falta de   conhecimento pleno sobre outras ferramentas alem do Jenkins e o tempo tomado   como desenvolvedor do CRM da empresa.                                                                                                                                                                                             &    Setor de   telecom/redes burocratizar excessivamente os acessos a dispositivos internos   e externos.                                                    \\ \hline
+       Geralmente   as dificuldades estão na mudança de cultura. As pessoas/instituições querem   ter o "DevOps" mas não quere abrir mão dos modelos antigos, os   quais, garantem muitas vezes poder para algumas pessoas.                                                                                                        &    A falta   de interesse e vontade das pessoas.                                                                                                            \\ \hline
+       A   divisão de responsabilidades.                                                                                                                                                                                                                                                                                           &    A não   adoção da cultura por parte da alta gerência.                                                                                                    \\ \hline
+       Cultural                                                                                                                                                                                                                                                                                                                    &    Ganho de   performace e redução de custo.                                                                                                                \\ \hline
+       Integração   de testes                                                                                                                                                                                                                                                                                                      &    Se a   entrega do produto fosse interna para empresa.!                                                                                                   \\ \hline
+       A maior   dificuldade foi no dimencionamento. A equipe de Devops não pertence aos   times. São alocados quando existe necessidade. Mas são poucos para a demanda.                                                                                                                                                           &    Entendo   ser importante. Mas em um contexto com vários sistemas, arquiteturas e   tecnologias, é difícil padronizar.                                    \\ \hline
+       Uma   cultura muito nova no Brasil, na qual não se fala na faculdade e se fala   muito pouco mesmo em fóruns brasileiros. Necessidade de buscar em fontes   estrangeiras a maior parte de conteúdo.                                                                                                                         &    Adotaria   em qualquer situação.                                                                                                                         \\ \hline
+       Dificuldades   de adoção inicial por parte das lideranças para que seja possível uma   abordagem com diferentes times. Ocorreu muita resistência pelo medo de perda   de emprego devido a automação.                                                                                                                        &    Eu   sempre adotaria devops. A única possibilidade disso não acontecer é uma   empresa tão desorganizada que inviabilizasse o processo.                  \\ \hline
+       encontrar   profissional com conhecimento tecnico capaz de integrar o time.                                                                                                                                                                                                                                                 &    orçamento.                                                                                                                                               \\ \hline
+       - Falta   de apoio de lideranças de equipes;\\     - Falta de tempo para estudo sobre as ferramentas e frameworks;\\     - às vezes, falta de empatia entre as equipes                                                                                                                                                      &    Apenas a   falta de desejo por parte de colegas / lideranças. Acredito que o mindset de   colaboração é vital para alcançarmos resultados interessantes. \\ \hline
+       Cultura                                                                                                                                                                                                                                                                                                                     &    Nada                                                                                                                                                     \\ \hline
+       Curva de   aprendizado                                                                                                                                                                                                                                                                                                      &    Custo   alto                                                                                                                                             \\ \hline
+    \end{tabularx}
+\end{table}
 
 
 
