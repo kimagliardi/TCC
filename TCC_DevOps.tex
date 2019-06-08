@@ -42,6 +42,7 @@
 \usepackage{pdfpages}
 \usepackage{setspace}
 \usepackage{breakcites}
+\usepackage{longtable}
 
 %\usepackage{url}
 %\usepackage{breakurl}
@@ -362,6 +363,7 @@ O retângulo contém 50\% dos valores do conjunto de dados. A posição da linha
 
 \section{Uma análise sobre o panorama de experiências profissionais em ambientes DevOps}
 Nesta seção realiza-se a análise dos resultados do Survey e subdivide-se da seguinte forma: (a) dados sócio-demográficos, (b) Análise de maturidade sobre práticas DevOps, (c) ferramentas e atividades, (d) fontes de informação, e (e) dados qualitativos sobre dificuldades e ganhos na adoção do DevOps.
+Os resultados com as respostas brutas dos candidatos estão na seção Apendicê B - Resultados do Survey.
 
 \subsection{Dados sócio-demográficos}
 O público alvo desta pesquisa é composto por profissionais da área de Desenvolvimento e Operações de companhias que praticam ou estão em fase de adoção da cultura DevOps. Observa-se na Figura \ref{fig:cargos} que 30\% dos entrevistados estão atualmente trabalhando como Desenvolvedores de Software e outros 20\% na área de Infraestrutura de TI.  Cabe destacar que 6,67\% dos profissionais optaram por não declarar seu cargo. Essa questão foi considerada opcional, com a intenção de não afastar possíveis respondentes que de alguma forma poderiam sentir-se de desconfortáveis em relação ao sigilo da pesquisa. 
@@ -603,60 +605,102 @@ Para trabalhos futuros, recomenda-se a ampliação da amostra de pesquisa, afim 
 
 
 \appendix
-\includepdf[scale=0.8, nup = 1x3, pages=-, pagecommand=\section{Survey}]{questionario.pdf}
 
+\includepdf[scale=0.9, pages=1,pagecommand={\section{Survey}}]{questionario.pdf}
+
+\includepdf[pages=2-14, nup = 1x3, pagecommand={\thispagestyle{fancy}}]{questionario.pdf}
 
 \section{Resultados do Survey}
 
 \begin{table}[h]
-\tiny
-    \caption{Valores brutos para as questõs 1 à 4}
-    \begin{tabularx}{\columnwidth}{cccccc}
+\footnotesize
+    \caption{Valores brutos para as questões 1 e 2}
+    \begin{tabularx}{\columnwidth}{cccc}
     \hline
-~ & ID & q1 & q2 & q3 & q4 \\
-~ & 1 & fmenegussi@edu.unisinos.br & São Leopoldo/RS & De 100 a 499 colaboradores (Média Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 2 & marcelo@tisafe.com & Rio de Janeiro/RJ & De 20 a 99 colaboradores (Pequena Empresa) & Segurança da informação \\
-~ & 3 & rodrigochurrops@gmail.com & São Paulo /SP & De 20 a 99 colaboradores (Pequena Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 4 & glauberrs@gmail.com & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 5 & Não respondeu & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 6 & andre_tocchetto@gmail.com & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 7 & Não respondeu & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 8 & berggevist@gmail.com & Porto Alegre/RS & Até 19 colaboradores (Micro Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 9 & Não respondeu & Optou por não informar. & De 100 a 499 colaboradores (Média Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 10 & jr.miranda@outlook.com  & Remoto  & Até 19 colaboradores (Micro Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 11 & diego.fl.duarte@gmail.com & Belo Horizonte/BH & De 100 a 499 colaboradores (Média Empresa) & Devops/SRE Engineering \\
-~ & 12 & Ronan.vargas@gmail.com & Gravataí/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 13 & bruno_bauer@sicredi.com.br & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 14 & gfkauer@gmail.com & Porto, Portugal & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 15 & allan@allanmoraes.com.br & Porto Alegre/RS & De 100 a 499 colaboradores (Média Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 16 & Não respondeu & São paulo/SP & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 17 & diegorosa@diegorosa.com.br & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 18 & mesquita.cob@gmail.com & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 19 & adrianomegaz@gmail.com & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 20 & rafaela.robertson@gmail.com & Fora do Brasil & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 21 & paul.tejando@hotmail.com & Sergipe/SE & Até 19 colaboradores (Micro Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 22 & Vinicius.maximo.silva@gmail.com  & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 23 & victor.farias@uniriotec.br & Rio de Janeiro/RJ & Mais de 500 colaboradores (Grande Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 24 & wagner.lpassos@gmail.com & Rio de Janeiro/RJ & Mais de 500 colaboradores (Grande Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 25 & ruanpelissoli@hotmail.com & Porto Alegre/RS & De 20 a 99 colaboradores (Pequena Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 26 & jonas.dc.cardoso@gmail.com & Porto Alegre/RS & De 20 a 99 colaboradores (Pequena Empresa) & Analise de negócios \\
-~ & 27 & Não respondeu & Porto Alegre/RS & De 100 a 499 colaboradores (Média Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 28 & Não respondeu & São Bernardo SP & Até 19 colaboradores (Micro Empresa) & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
-~ & 29 & Daniel@rapido.net.br  & Osório/RS  & Até 19 colaboradores (Micro Empresa) & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
-~ & 30 & Rodrigaorg@gmail.com & Porto Alegre/RS & Mais de 500 colaboradores (Grande Empresa) & Gestão administrativa \\ 
-\hline
+ ~ & ID & q1 & q2 \\ \hline
+ ~ & 1 & fmenegussi@edu.unisinos.br & São Leopoldo/RS \\
+ ~ & 2 & marcelo@tisafe.com & Rio de Janeiro \\
+ ~ & 3 & rodrigochurrops@gmail.com & São Paulo  \\
+ ~ & 4 & glauberrs@gmail.com & Porto Alegre - RS \\
+ ~ & 5 & Não respoderam & Porto Alegre  \\
+ ~ & 6 & andre\_tocchetto@gmail.com & Porto Alegre/RS \\
+ ~ & 7 & Não respoderam & Porto Alegre/RS \\
+ ~ & 8 & berggevist@gmail.com & Porto Alegre/RS \\
+ ~ & 9 & Não respoderam & Não respoderam \\
+ ~ & 10 & jr.miranda@outlook.com  & Remoto  \\
+ ~ & 11 & diego.fl.duarte@gmail.com & Belo Horizonte \\
+ ~ & 12 & Ronan.vargas@gmail.com & Gravataí-RS \\
+ ~ & 13 & bruno\_bauer@sicredi.com.br & Porto Alegre \\
+ ~ & 14 & gfkauer@gmail.com & Porto, Portugal \\
+ ~ & 15 & allan@allanmoraes.com.br & Porto Alegre - RS \\
+ ~ & 16 & Não respoderam & São paulo \\
+ ~ & 17 & diegorosa@diegorosa.com.br & Porto Alegre/Rio Grande do Sul \\
+ ~ & 18 & mesquita.cob@gmail.com & Porto Alegre RS \\
+ ~ & 19 & adrianomegaz@gmail.com & Não respoderam \\
+ ~ & 20 & rafaela.robertson@gmail.com & Fora do Brasil \\
+ ~ & 21 & paul.tejando@hotmail.com & Sergipe \\
+ ~ & 22 & Vinicius.maximo.silva@gmail.com  & Porto Alegre RS \\
+ ~ & 23 & victor.farias@uniriotec.br & Rio de Janeiro/RJ \\
+ ~ & 24 & wagner.lpassos@gmail.com & Rio de Janeiro/Rio de Janeiro \\
+ ~ & 25 & ruanpelissoli@hotmail.com & Porto Alegre \\
+ ~ & 26 & jonas.dc.cardoso@gmail.com & Porto Alegre \\
+ ~ & 27 & Não respoderam & Porto Alegre \\
+ ~ & 28 & Não respoderam & São Bernardo SP \\
+ ~ & 29 & Daniel@rapido.net.br  & Osório-RS  \\
+ ~ & 30 & Rodrigaorg@gmail.com & Porto Alegre/ RS \\ \hline
     \end{tabularx}
     \source{Elaborado pelo autor.}
 \end{table}
 
-
+\section{Resultados do Survey}
 
 \begin{table}[h]
 \footnotesize
-    \caption{Média, Moda e Mediana para as questõs 5 à 8}
+    \caption{Valores brutos para as questões 3 e 4}
+    \begin{tabularx}{\columnwidth}{cccc}
+    \hline
+        ~ & ID & q3 & q4 \\ \hline
+~ & 1 & De 100 a 499 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 2 & De 20 a 99 colaboradores & Segurança da informação \\
+~ & 3 & De 20 a 99 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 4 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 5 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 6 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 7 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 8 & Até 19 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 9 & De 100 a 499 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 10 & Até 19 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 11 & De 100 a 499 colaboradores & Devops/SRE Engineering \\
+~ & 12 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 13 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 14 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 15 & De 100 a 499 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 16 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 17 & Mais de 500 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 18 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 19 & Mais de 500 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 20 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 21 & Até 19 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 22 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 23 & Mais de 500 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 24 & Mais de 500 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 25 & De 20 a 99 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 26 & De 20 a 99 colaboradores & Analise de negócios \\
+~ & 27 & De 100 a 499 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 28 & Até 19 colaboradores & Operações de TI (Banco de dados, Middleware, Infraestrutura, Serviços, etc..) \\
+~ & 29 & Até 19 colaboradores & Desenvolvimento de software(Front-End, Back-End, Testes, Mobile, etc..) \\
+~ & 30 & Mais de 500 colaboradores & Gestão administrativa \\
+    
+    \end{tabularx}
+    \source{Elaborado pelo autor.}
+\end{table}
+
+\begin{table}[h]
+\footnotesize
+    \caption{Valores brutos para as questões 5 a 8}
     \begin{tabularx}{\textwidth}{llll>{\raggedright}Xl}
     \hline
-~ & ID & q5 & q6 & q7 & q8 \\
+~ & ID & q5 & q6 & q7 & q8 \\ \hline
 ~ & 1 & 6 a 10 anos & Desenvolvedor & Não possuo experiência, mas estou pesquisando sobre DevOps. & Tecnologia/Software \\
 ~ & 2 & Acima de 10 anos & CEO & Acima de 5 anos & Segurança da Informação \\
 ~ & 3 & Acima de 10 anos & DevOps & 1 a 2 anos & Tecnologia/Software \\
@@ -737,7 +781,7 @@ Para trabalhos futuros, recomenda-se a ampliação da amostra de pesquisa, afim 
 
 \begin{table}[h]
 \footnotesize
-    \caption{Média, Moda e Mediana para as questõs 9 à 21}
+    \caption{Média, Moda e Mediana para as questõs 9 a 21}
     \begin{tabularx}{\columnwidth}{cccccccccccccc}
     \hline
     ~       & Q9   & Q10  & Q11  & Q12  & Q13  & Q14  & Q15  & Q16  & Q17  & Q18  & Q19  & Q20  & Q21  \\\hline
@@ -748,53 +792,156 @@ Para trabalhos futuros, recomenda-se a ampliação da amostra de pesquisa, afim 
     \source{Elaborado pelo autor.}
 \end{table}
 
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+{\footnotesize\begin{longtable}{llllllllll}
+
+\caption{Valores brutos das respostas sobre questão 23}
+\hline
+Controle Codigo & Build & Int. Continua & Infra & Testes & Delivery & Monitoramento & Upgrades & Otimizacao & Scripts \\ \hline
+\endfirsthead
+%
+\endhead
+%
+5 & 3 & 5 & 4 & 5 & 3 & 2 & 2 & 2 & 4 \\
+1 & 2 & 3 & 3 & 3 & 3 & 2 & 3 & 3 & 3 \\
+5 & 5 & 3 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
+5 & 4 & 5 & 4 & 5 & 4 & 5 & 5 & 5 & 5 \\
+5 & 5 & 4 & 2 & 2 & 3 & 3 & 3 & 3 & 3 \\
+4 & 5 & 4 & 4 & 4 & 5 & 5 & 4 & 4 & 5 \\
+5 & 4 & 4 & 4 & 3 & 4 & 3 & 3 & 4 & 3 \\
+4 & 4 & 1 & 4 & 3 & 2 & 5 & 5 & 4 & 1 \\
+5 & 5 & 5 & 3 & 3 & 3 & 5 & 5 & 3 & 4 \\
+5 & 5 & 3 & 3 & 4 & 3 & 5 & 3 & 4 & 5 \\
+5 & 3 & 5 & 5 & 5 & 5 & 4 & 5 & 5 & 4 \\
+4 & 1 & 4 & 3 & 1 & 3 & 4 & 1 & 1 & 4 \\
+4 & 4 & 4 & 3 & 3 & 3 & 3 & 2 & 2 & 1 \\
+5 & 4 & 4 & 4 & 5 & 4 & 5 & 4 & 5 & 3 \\
+4 & 3 & 4 & 5 & 4 & 4 & 5 & 5 & 4 & 5 \\
+4 & 3 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 3 \\
+5 & 4 & 3 & 4 & 3 & 3 & 5 & 5 & 4 & 4 \\
+5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
+3 & 5 & 3 & 5 & 5 & 5 & 4 & 4 & 4 & 5 \\
+5 & 5 & 5 & 4 & 3 & 4 & 5 & 3 & 3 & 2 \\
+4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+4 & 5 & 3 & 1 & 2 & 3 & 5 & 4 & 3 & 4 \\
+5 & 5 & 5 & 5 & 2 & 5 & 5 & 2 & 3 & 5 \\
+5 & 5 & 5 & 5 & 2 & 5 & 5 & 2 & 3 & 5 \\
+5 & 4 & 4 & 4 & 4 & 5 & 4 & 5 & 4 & 3 \\
+5 & 4 & 4 & 5 & 5 & 4 & 4 & 4 & 3 & 4 \\
+4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+4 & 3 & 3 & 4 & 4 & 3 & 2 & 3 & 3 & 3 \\
+3 & 2 & 1 & 3 & 1 & 1 & 4 & 1 & 1 & 4 \\
+3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+\hline
+\source{Elaborado pelo autor.}
+\end{longtable}}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+{\footnotesize\begin{longtable}{llllllll}
+\caption{Valores brutos das respostas sobre questão 23}
+\hline
+Versao & Configuracao & Build & Mudancas & Testes & Integracao & Orquestracao & Provisionamento \\
+\hline
+\endfirsthead
+%
+\endhead
+%
+1 & 2 & 2 & 2 & 1 & 1 & 2 & 1 \\
+2 & 3 & 3 & 3 & 3 & 3 & 2 & 2 \\
+5 & 5 & 5 & 5 & 5 & 5 & 3 & 3 \\
+5 & 3 & 3 & 3 & 2 & 3 & 3 & 2 \\
+5 & 5 & 5 & 5 & 5 & 5 &  & 5 \\
+5 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+5 & 2 & 2 & 2 & 3 & 2 & 2 & 2 \\
+5 & 3 & 3 & 3 & 5 & 5 & 3 & 3 \\
+5 & 3 & 5 & 3 & 5 & 3 & 3 & 3 \\
+5 & 3 & 3 & 5 & 3 & 5 & 3 & 5 \\
+3 & 2 & 3 & 2 & 1 & 2 & 1 & 2 \\
+3 & 3 & 3 & 5 & 2 & 3 & 2 & 2 \\
+3 & 2 & 3 & 2 & 1 & 3 & 2 & 1 \\
+5 & 3 & 3 & 5 & 3 & 5 & 5 & 5 \\
+5 & 5 & 5 & 3 & 5 & 5 & 5 & 5 \\
+3 & 3 & 3 & 2 & 3 & 3 & 5 & 5 \\
+5 & 3 & 5 & 5 & 5 & 5 & 5 & 5 \\
+5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
+5 & 3 & 5 & 5 & 3 & 3 & 3 & 3 \\
+5 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+3 & 3 & 3 & 2 & 3 & 3 & 5 & 3 \\
+5 & 2 & 5 & 5 & 5 & 5 & 2 & 2 \\
+5 & 2 & 5 & 5 & 5 & 5 & 2 & 2 \\
+5 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+5 & 5 & 3 & 2 & 3 & 2 & 3 & 3 \\
+3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+3 & 3 & 5 & 3 & 3 & 3 & 5 & 3 \\
+5 & 3 & 2 & 1 & 1 & 3 & 3 & 2 \\
+2 & 3 & 3 & 3 & 3 & 2 & 3 & 3 \\
+\hline
+\source{Elaborado pelo autor.}
+\end{longtable}}
+
+
+
+{\footnotesize\begin{longtable}[H]{llllllll}
+\caption{Valores brutos das respostas sobre questão 24}
+\hline
+ID & Treinamentos online & Foruns Online & Blogs & Faculdade & Cursos presenciais & Meetups/Grupos & Livros \\
+\hline
+\endfirsthead
+%
+\endhead
+%
+1 & 4 & 3 & 3 & 2 & 1 & 1 & 3 \\
+2 & 3 & 3 & 3 & 4 & 5 & 1 & 5 \\
+3 & 4 & 4 & 4 & 2 & 3 & 4 & 3 \\
+4 & 3 & 4 & 5 & 1 & 1 & 5 & 3 \\
+5 & 3 & 3 & 3 & 2 & 1 & 3 & 3 \\
+6 & 4 & 4 & 5 & 1 & 1 & 1 & 1 \\
+7 & 4 & 4 & 2 & 2 & 1 & 2 & 1 \\
+8 & 2 & 4 & 4 & 2 & 1 & 1 & 3 \\
+9 & 3 & 3 & 3 & 1 & 1 & 3 & 2 \\
+10 & 4 & 2 & 2 & 1 & 1 & 1 & 1 \\
+11 & 3 & 5 & 4 & 1 & 4 & 4 & 3 \\
+12 & 3 & 4 & 3 & 1 & 1 & 2 & 2 \\
+13 & 3 & 4 & 2 & 2 & 2 & 2 & 4 \\
+14 & 4 & 3 & 3 & 1 & 2 & 4 & 3 \\
+15 & 5 & 4 & 3 & 2 & 1 & 3 & 2 \\
+16 & 3 & 3 & 3 & 1 & 1 & 5 & 5 \\
+17 & 3 & 5 & 4 & 2 & 3 & 4 & 5 \\
+18 & 4 & 5 & 3 & 2 & 2 & 3 & 3 \\
+19 & 5 & 5 & 5 & 1 & 1 & 5 & 3 \\
+20 & 2 & 3 & 3 & 1 & 1 & 1 & 1 \\
+21 & 4 & 4 & 4 & 1 & 1 & 3 & 3 \\
+22 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+23 & 4 & 4 & 3 & 2 & 1 & 2 & 1 \\
+24 & 4 & 4 & 3 & 2 & 1 & 2 & 1 \\
+25 & 3 & 3 & 3 & 1 & 1 & 1 & 1 \\
+26 & 4 & 4 & 2 & 2 & 2 & 4 & 1 \\
+27 & 5 & 5 & 4 & 1 & 2 & 3 & 3 \\
+28 & 3 & 2 & 3 & 1 & 1 & 3 & 3 \\
+29 & 2 & 4 & 5 & 2 & 1 & 3 & 5 \\
+30 & 2 & 3 & 2 & 2 & 2 & 3 & 1 \\
+\hline
+\source{Elaborado pelo autor.}
+\end{longtable}}
+
+
 \begin{table}[h]
 \footnotesize
-    \caption{Valores brutos da questão 24}
-    \begin{tabularx}{\columnwidth}{cccccc}
-    \hline
-~ & Treinamentos online & Foruns Online & Blogs pessoais & Faculdade & Cursos presenciais & Meetups/Grupos de estudo & Livros \\ 
-~ & Muitas vezes & Às vezes & Às vezes & Raramente & Nunca & Nunca & Às vezes \\ 
-~ & Às vezes & Às vezes & Às vezes & Muitas vezes & Sempre & Nunca & Sempre \\ 
-~ & Muitas vezes & Muitas vezes & Muitas vezes & Raramente & Às vezes & Muitas vezes & Às vezes \\ 
-~ & Às vezes & Muitas vezes & Sempre & Nunca & Nunca & Sempre & Às vezes \\ 
-~ & Às vezes & Às vezes & Às vezes & Raramente & Nunca & Às vezes & Às vezes \\ 
-~ & Muitas vezes & Muitas vezes & Sempre & Nunca & Nunca & Nunca & Nunca \\ 
-~ & Muitas vezes & Muitas vezes & Raramente & Raramente & Nunca & Raramente & Nunca \\ 
-~ & Raramente & Muitas vezes & Muitas vezes & Raramente & Nunca & Nunca & Às vezes \\ 
-~ & Às vezes & Às vezes & Às vezes & Nunca & Nunca & Às vezes & Raramente \\ 
-~ & Muitas vezes & Raramente & Raramente & Nunca & Nunca & Nunca & Nunca \\ 
-~ & Às vezes & Sempre & Muitas vezes & Nunca & Muitas vezes & Muitas vezes & Às vezes \\ 
-~ & Às vezes & Muitas vezes & Às vezes & Nunca & Nunca & Raramente & Raramente \\ 
-~ & Às vezes & Muitas vezes & Raramente & Raramente & Raramente & Raramente & Muitas vezes \\ 
-~ & Muitas vezes & Às vezes & Às vezes & Nunca & Raramente & Muitas vezes & Às vezes \\ 
-~ & Sempre & Muitas vezes & Às vezes & Raramente & Nunca & Às vezes & Raramente \\ 
-~ & Às vezes & Às vezes & Às vezes & Nunca & Nunca & Sempre & Sempre \\ 
-~ & Às vezes & Sempre & Muitas vezes & Raramente & Às vezes & Muitas vezes & Sempre \\ 
-~ & Muitas vezes & Sempre & Às vezes & Raramente & Raramente & Às vezes & Às vezes \\ 
-~ & Sempre & Sempre & Sempre & Nunca & Nunca & Sempre & Às vezes \\ 
-~ & Raramente & Às vezes & Às vezes & Nunca & Nunca & Nunca & Nunca \\ 
-~ & Muitas vezes & Muitas vezes & Muitas vezes & Nunca & Nunca & Às vezes & Às vezes \\ 
-~ & Nunca & Nunca & Nunca & Nunca & Nunca & Nunca & Nunca \\ 
-~ & Muitas vezes & Muitas vezes & Às vezes & Raramente & Nunca & Raramente & Nunca \\ 
-~ & Muitas vezes & Muitas vezes & Às vezes & Raramente & Nunca & Raramente & Nunca \\ 
-~ & Às vezes & Às vezes & Às vezes & Nunca & Nunca & Nunca & Nunca \\ 
-~ & Muitas vezes & Muitas vezes & Raramente & Raramente & Raramente & Muitas vezes & Nunca \\ 
-~ & Sempre & Sempre & Muitas vezes & Nunca & Raramente & Às vezes & Às vezes \\ 
-~ & Às vezes & Raramente & Às vezes & Nunca & Nunca & Às vezes & Às vezes \\ 
-~ & Raramente & Muitas vezes & Sempre & Raramente & Nunca & Às vezes & Sempre \\ 
-~ & Raramente & Às vezes & Raramente & Raramente & Raramente & Às vezes & Nunca \\  \hline
-    
-    \end{tabularx}
-    \source{Elaborado pelo autor.}
-\end{table}
-
-
-
-
-\begin{table}[h]
-\footnotesize
-    \caption{Respostas das questões 25 e 26}
+    \caption{Valores brutos das respostas sobre questão 25 e 26}
    \begin{tabularx}{\columnwidth}{XX}
     \hline
     \textbf{Quais foram as suas principais dificuldades ao iniciar suas atividades em um ambiente DevOps?}                                                                                                                                                                                                                                  & \textbf{O que faria você não adotar a cultura DevOps em sua organização?}                                                                                            \\ \hline
