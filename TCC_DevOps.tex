@@ -40,18 +40,30 @@
 \usepackage{listings}
 \usepackage{ltxtable}
 \usepackage{pdfpages}
+\usepackage{setspace}
+\usepackage{breakcites}
+
+%\usepackage{url}
+%\usepackage{breakurl}
+%\usepackage[breaklinks]{hyperref}
 %=======================================================================
 
 \unisinosbst
 %\usepackage{xcolor}
 \usepackage[dvipsnames]{xcolor}
 %\usepackage[alf]{abntcite}
+%Ajustando a source para figuras
 \newcolumntype{L}{>{\centering\arraybackslash}m{8cm}}
 \newcommand{\source}[1]{\caption*{Fonte: {#1}} }
 \long\def\/*#1*/{}
 
+\definecolor{persiangreen}{rgb}{0.0, 0.65, 0.58}
 
-%Ajustando a source para figuras
+%Ajustando espaços em branco das figuras
+\setlength{\abovecaptionskip}{2.0pt}
+\setlength{\belowcaptionskip}{-6pt}
+
+
 %=======================================================================
 % Capa
 %=======================================================================
@@ -133,7 +145,7 @@ Desta forma, este estudo tem como objetivo geral analisar as características do
 Neste trabalho busca-se analisar quais são as características dos profissionais inseridos em companhias que estão adotando ou já adotaram as práticas da cultura DevOps. Para tanto, foi necessário realizar uma revisão bibliográfica para compreender quais são os pontos-chave desta cultura (ferramentas, frameworks e atividades consideradas \textit{core} para este novo papel). Baseado nos achados levantados durante esta revisão, elaborou-se um questionário com 27 questões, relacionadas a DevOps e experiências destes profissionais. 
 
 %\subsection{Estrutura do trabalho}
-O presente trabalho divide-se em cinco capítulos, dos quais o \textbf{primeiro capítulo} apresenta os objetivos, o método utilizado e a justificativa para o desenvolvimento do TCC. O \textbf{segundo capítulo} apresenta o referencial teórico, conceituando em linhas gerais o que é DevOps, quais são as características que esta cultura apresenta e uma breve descrição sobre as práticas utilizadas pelos profissionais.O \textbf{terceiro capítulo} apresenta-se as etapas de pesquisa. No \textbf{quarto capítulo} detalham-se os resultados do Survey e por fim, no \textbf{quinto capítulo} seguem as conclusões.
+O presente trabalho divide-se em cinco capítulos, dos quais o \textbf{primeiro capítulo} apresenta os objetivos, o método utilizado e a justificativa para o desenvolvimento do TCC. O \textbf{segundo capítulo} apresenta o referencial teórico, conceituando em linhas gerais o que é DevOps, quais são as características que esta cultura apresenta e uma breve descrição sobre as práticas utilizadas pelos profissionais. O \textbf{terceiro capítulo} apresenta-se as etapas de pesquisa. No \textbf{quarto capítulo} detalham-se os resultados do Survey e por fim, no \textbf{quinto capítulo} seguem as conclusões.
 %=======================================================================
 % Referencial Teórico
 %=======================================================================
@@ -151,7 +163,7 @@ Existe um termo na indústria que descreve esse tipo de comportamento como ``O m
 \begin{figure}[h!]
     \centering
         \caption{Muro da confusão}
-    \includegraphics[scale=.8]{imagens/WallOfConfusion.png}
+    \includegraphics[scale=.6]{imagens/WallOfConfusion.png}
     \source{\citetexto{DEV2PS}}
     \label{fig:Muro da confusão}
     \end{figure}
@@ -197,7 +209,7 @@ Esse estudo foi um marco para alavancar o movimento e nesta mesma conferência, 
 \begin{figure}[h!]
     \centering
         \caption{O elefante DevOps}
-    \includegraphics[scale=.5]{imagens/devops_elephant.png}
+    \includegraphics[scale=.6]{imagens/devops_elephant.png}
     \source{\citetexto{Microsoft2015}}
     \label{fig:elefante DevOps}
 \end{figure}
@@ -285,13 +297,13 @@ Um benefícios de transformar a infraestrutura em código é a possibilidade de 
 \subsection{Trabalhos relacionados}
 O trabalho realizado por \citetexto{Kerzazi2016} realiza o mapeamento de atividades e áreas de conhecimento consideradas importantes para profissionais que atuam como ``DevOps / \textit{Release Engineers}''. Esse mapeamento foi realizado em Setembro de 2015, a partir da análise de 211 postagens de emprego realizadas no site monster.com, considerado um dos maiores sites de anúncios de emprego no mundo. Essa análise escolheu, de maneira randômica, 119 postagens de emprego realizadas nos Estados Unidos, 33 no Canadá, 49 no Reino Unido, 6 na Austrália e 4 na índia.  De maneira resumida, os autores realizaram a análise de maneira qualitativa manual de 144 postagens, para entender melhor as responsabilidades e deveres desejados no perfil destes profissionais. Os resultados desta análise foram utilizados para a elaboração de parte do questionário deste presente estudo e também para o mapeamento de práticas, habilidades e responsabilidades destes profissionais. As perguntas \textbf{22 e 23} são compostas a partir das habilidades mapeadas por este trabalho.
 
-Já \citetexto{Jabbari2016} apresenta um mapeamento sistemático sobre o que é DevOps, explanando suas definições e práticas. O objetivo deste trabalho era além de realizar um mapeamento das práticas associadas a DevOps, entender quais eram as diferenças entre DevOps e outros métodos de desenvolvimento de \textit{software}. Entre os achados desta pesquisa destacam-se a proposta de definição de que DevOps é uma metodologia de desenvolvimento entre equipes de Desenvolvimento e Operações, que tem como ênfase a comunicação e colaboração, integração contínua, \textit{Quality Assurance} e entrega de implantações de maneira automatizada, utilizando um conjunto de práticas de desenvolvimento de software. Ainda, entende que DevOps é uma extensão dos métodos ágeis e que práticas de desenvolvimento ágil são a base para suportar as práticas contidas em DevOps. Inspirado nesses achados a presente \textcolor{red}{pesquisa organizou as perguntas xxx, xxx, xx.}
+Já \citetexto{Jabbari2016} apresenta um mapeamento sistemático sobre o que é DevOps, explanando suas definições e práticas. O objetivo deste trabalho era além de realizar um mapeamento das práticas associadas a DevOps, entender quais eram as diferenças entre DevOps e outros métodos de desenvolvimento de \textit{software}. Entre os achados desta pesquisa destacam-se a proposta de definição de que DevOps é uma metodologia de desenvolvimento entre equipes de Desenvolvimento e Operações, que tem como ênfase a comunicação e colaboração, integração contínua, \textit{Quality Assurance} e entrega de implantações de maneira automatizada, utilizando um conjunto de práticas de desenvolvimento de software. Ainda, entende que DevOps é uma extensão dos métodos ágeis e que práticas de desenvolvimento ágil são a base para suportar as práticas contidas em DevOps. 
 
 \citetexto{Braga2015} realiza um panorama sobre as práticas DevOps utilizadas nas indústrias de \textit{software} brasileiras, além disso, também realiza um mapeamento sobre quais metodologias ágeis estão relacionadas às práticas de DevOps. 
 \citetexto{Levita2017} teve como objetivo compreender como empresas de grande porte, que utilizam práticas de DevOps no processo de desenvolvimento de \textit{software} se organizam para atingir a agilidade desejada na implantação das suas aplicações. \citetexto{Levita2017} realizou a construção de questionários para cada grupo de atividades do framework \textbf{CALMS}, obtendo níveis de maturidade dos entrevistados em cada grupo de práticas em DevOps.
 
 A presente pesquisa pretende realizar um survey direcionado para profissionais que trabalham em companhias que praticam ou que estão em processo de adoção da cultura DevOps, com o objetivo de mapear quais práticas de automação e colaboração estão em uso e entender o nível de maturidade sobre estas práticas nas organizações, o que acaba tornando-se um apanhado geral dos trabalhos citados acima, mas voltado para o contexto do Brasil.
-Dessa forma, o trabalho pretende utilizar critérios de avaliação semelhantes aos utilizados por \citetexto{Levita2017} e \citetexto{Braga2015} no sentido de avaliar o nível de maturidade de processos.
+Dessa forma, o trabalho pretende utilizar critérios de avaliação semelhantes aos utilizados por \citetexto{Levita2017} e \citetexto{Braga2015} no sentido de avaliar o nível de maturidade das práticas DevOps.
 
 Os trabalhos de \citetexto{Kerzazi2016} e \citetexto{Jabbari2016} fornecem uma base sólida para o mapeamento de práticas utilizadas por profissionais atuantes nos ambientes DevOps, mas são voltados para realidades de outros países. Na presente pesquisa, busca-se entender se os pontos observados (habilidades e áreas de conhecimento) por \citetexto{Kerzazi2016} são aderentes à realidade encontrada no Brasil.
 
@@ -328,7 +340,7 @@ As \textbf{questões 15 a 21} analisam o nível de maturidade relacionado as pr�
 As \textbf{questões 22 e 23} analisam se as ferramentas e práticas levantadas por \citetexto{Kerzazi2016} são relevantes para os profissionais brasileiros.
 Enquanto a \textbf{questão 24} analisa como estes profissionais estão se preparando em termos de estudo para este novo paradigma, bem como quais são suas fontes de informação sobre novas ferramentas e práticas. Por fim, as \textbf{questões 25 à 27} analisam a percepção destes profissionais sobre quais são as dificuldades e ganhos na adoção deste novo paradigma.
 
- Como base para as questões 9 à 21, elaborou-se uma escala adaptada sobre o modelo proposto por \citetexto{Isaca2012} em COBIT 5, no qual propõe um modelo de capacidade de processo definido em 5 níveis definidos abaixo: \textbf{maturidade 5 - Melhoria Contínua}: Prática em processo de melhoria contínua. Time possui excelência na realização da prática, que foi completamente assimilada na cultura da organização; \textbf{maturidade 4 - Avançado}: Prática otimizada pelo time e que se torna parte da cultura da organização. Resultados de negócio sempre visíveis pelo corpo gestor da organização; \textbf{maturidade 3 - Gerenciado}: Prática sistematizada pelo time ou organização. Resultados começam a tornar-se visíveis pela organização; \textbf{maturidade 2 - Consciente}: Prática embrionária no time ou organização. Resultados iniciais e ainda inconsistentes; \textbf{maturidade 1 - Inicial}: Ausência de práticas ou iniciativas \textit{ad hoc} realizadas isoladamente por algumas pessoas.
+ Como base para as questões 9 a 21, elaborou-se uma escala adaptada sobre o modelo proposto por \citetexto{Isaca2012} em COBIT 5, no qual propõe um modelo de capacidade de processo definido em 5 níveis definidos abaixo: \textbf{maturidade 5 - Melhoria Contínua}: Prática em processo de melhoria contínua. Time possui excelência na realização da prática, que foi completamente assimilada na cultura da organização; \textbf{maturidade 4 - Avançado}: Prática otimizada pelo time e que se torna parte da cultura da organização. Resultados de negócio sempre visíveis pelo corpo gestor da organização; \textbf{maturidade 3 - Gerenciado}: Prática sistematizada pelo time ou organização. Resultados começam a tornar-se visíveis pela organização; \textbf{maturidade 2 - Consciente}: Prática embrionária no time ou organização. Resultados iniciais e ainda inconsistentes; \textbf{maturidade 1 - Inicial}: Ausência de práticas ou iniciativas \textit{ad hoc} realizadas isoladamente por algumas pessoas. As respostas apresentadas nessas questões estão organizadas de uma maneira \textit{top-down}, ou seja, o nível de maior maturidade é a primeira resposta da lista e o menor é a última.
 
  \subsection{Análise de dados}
 Para análise dos dados utilizou-se parâmetros básicos da estatística descritiva como: média, moda e mediana. Esses parâmetros são observados em especial nas questões 9 à 25, onde encontram-se dois tipos de escala: uma adaptada do modelo proposto em COBIT 5 e descrita na seção de projeto do survey, que atende às questões 9 a 21. Enquanto as questões 22 a 24 utilizam um modelo de escala tipo Likert, que são descritas na seção de análise de resultados de cada pergunta.
@@ -401,25 +413,24 @@ A Figura \ref{fig:colaboradores} apresenta a distribuição das empresas por ati
     \label{fig:colaboradores}
 \end{figure}
 
-
 \subsection{Análise sobre o nível de colaboração entre as equipes de Desenvolvimento e Operações.}
-Esta seção realiza uma análise individual das questões 9 a 15. Esses questionamentos visam entender em que estágio de maturidade está o compartilhamento de tarefas, ferramentas, oportunidades e responsabilidades entre as equipes. No final desta seção é realizada uma síntese com os valores médios de maturidade para cada questão analisada.
 
-%\subsubsection{Equipes cross-funcionais}
-Observa-se na Figura \ref{fig:crossFuncionais} que grande parte dos entrevistados já trabalha (ao menos em alguns projetos), em um time cross-funcional. Este é um dos grandes pontos a serem levados em consideração quando se pensa em adotar a cultura DevOps. A ideia por trás desta prática e quebrar as barreiras existentes entre os times e sistematizar o sentimento de que todos os indivíduos são responsáveis pelo processo de entrega.
+Esta seção realiza uma análise individual das questões 9 a 15. Esses questionamentos visam entender em que estágio de maturidade está o compartilhamento de tarefas, ferramentas, oportunidades e responsabilidades entre as equipes. \textcolor{red}{No final desta seção é realizada uma síntese com os valores médios de maturidade para cada questão analisada.} Nas representações gráficas utilizou-se uma escala de cores para representação dos níveis de maturidade, afim de facilitar a conexão entre os níveis de maturidade e a visualização de dados nos gráficos gráficos. Classificam-se as cores da seguinte maneira: {\textcolor{yellow}{Amarelo}} - Nível de maturidade 5; \textcolor{persiangreen}{Verde} - Nível de maturidade 4; \textcolor{gray}{Cinza} - Nível de maturidade 3; \textcolor{red}{Vermelho} - Nível de maturidade 2; \textcolor{orange}{Laranja} - Nível de maturidade 1.\\ \indent
+ A Figura \ref{fig:crossFuncionais} apresenta os resultados da questão 9, observa-se que grande parte dos entrevistados já trabalha (ao menos em alguns projetos), em um time cross-funcional. A ideia por trás desta prática e quebrar as barreiras existentes entre os times e sistematizar o sentimento de que todos os indivíduos são responsáveis pelo processo de entrega.
 Apenas sete (23,33\%) dos entrevistados ainda não trabalha desta forma. 
+Algumas organizações denominam estes times como \textit{Squad} ("Esquadra"). Muitas empresas se inspiram no modelo proposto \citetexto{SPOTIFY}, onde cada squad funciona como uma mini-startup. A equipe é auto-organizada e possui autonomia suficiente para decidir seus processos internos.
+
 \begin{figure}[H]
     \centering
     \caption{Sua organização trabalha com times cross-funcionais?}
-       \includegraphics[scale=.6]{imagens/crossFuncionais_PBI.JPG}
+       \includegraphics[scale=.63]{imagens/crossFuncionais_PBI.JPG}
         \source{Elaborado pelo autor.}
     \label{fig:crossFuncionais}
 \end{figure}
-
-Algumas organizações denominam estes times como \textit{Squad} ("Esquadra"). Muitas empresas se inspiram no modelo proposto \citetexto{SPOTIFY}, onde cada squad funciona como uma mini-startup. A equipe é auto-organizada e possui autonomia suficiente para decidir seus processos internos.
-
 %\subsubsection{Compartilhamento de conhecimento entre os times}
-\textcolor{red}{A questão xx tem como objetivo analisar o quanto os times compartilham} suas informações. Na Figura \ref{fig:compartConhecimento} é possível observar que na organização para 14 (46,67\%) dos entrevistados as informações são compartilhadas apenas quando requisitado, para outros 11 (36,67 \%) as informações estão disponíveis para todos e em formatos dinâmicos, como wikis e salas de bate-papo (plataformas como Slack e MS Teams). 
+A questão 10 tem como objetivo analisar o quanto os times compartilham suas informações. Na Figura \ref{fig:compartConhecimento} é possível observar que na organização para 14 (46,67\%) dos entrevistados as informações são compartilhadas apenas quando requisitado, para 11 (36,67 \%) dos entrevistados as informações estão disponíveis para todos e em formatos dinâmicos, como \textit{Wikis} e salas de bate-papo (plataformas como Slack e MS Teams). 
+A questão 10 está diretamente ligada ao \textbf{S - Sharing} do framework CALMS e visa entender o quão dinâmica e sem obstruções é a comunicação entre os times. 
+\newline
 \begin{figure}[H]
     \centering
     \caption{Como você descreveria o compartilhamento de conhecimento entre times?}
@@ -427,12 +438,12 @@ Algumas organizações denominam estes times como \textit{Squad} ("Esquadra"). M
         \source{Elaborado pelo autor.}
     \label{fig:compartConhecimento}
 \end{figure}
-\textcolor{red}{A questão xxxx está diretamente ligada} ao \textbf{S - Sharing} do framework CALMS e visa entender o quão dinâmica e sem obstruções é a comunicação entre os times. 
-
+%
 %\subsubsection{Compartilhamento de ferramentas entre Dev e Ops}
-Na Figura \ref{fig:compartFerramentas} observa-se que 14 (46,67\%) dos entrevistados ainda realiza o compartilhamento de ferramentas de forma parcial, enquanto outros sete (23,33\%) possuem suas ferramentas integradas, mas não possuem um fluxo único de entrega. Apenas quatro (13,33\%) dos entrevistados possuem um fluxo único de entrega e com todas as suas ferramentas integradas.
-Considerando os níveis de maturidade propostos, os resultados se enquadram nos respectivos níveis: Gerenciado = 14 (46,67\%), Avançado = 7 (23,33\%) e Melhoria contínua = 4 (13,33\%).
-Embora o foco em DevOps seja o mesmo que o descrito no manifesto ágil (Indivíduos e interações em detrimento a processos e ferramentas), ter um conjunto único de ferramentas que forme de fato uma "esteira" de entrega de software pode otimizar a entrega e diminuir a pressão constante entre os times.
+Na Figura \ref{fig:compartFerramentas} observa-se que 14 (46,67\%) dos entrevistados ainda realiza o compartilhamento de ferramentas de forma parcial, enquanto outros sete (23,33\%) possuem suas ferramentas integradas, mas não possuem um fluxo único de entrega. Apenas quatro (13,33\%) dos entrevistados possuem um fluxo único de entrega e com todas as suas ferramentas integradas, outros três (10\%) compartilham algum status entre suas ferramentas via monitoramentos e apenas para dois (6,66\%) usam ferramentas totalmente distintas para suas tarefas.
+
+Embora o foco em DevOps seja o mesmo que o descrito no manifesto ágil (Indivíduos e interações em detrimento a processos e ferramentas), ter um conjunto único de ferramentas que forme de fato uma ``esteira'' de entrega de software pode otimizar a entrega e diminuir a pressão constante entre os times.
+
 \begin{figure}[H]
     \centering
     \caption{Compartilhamento de ferramentas entre os times de Dev e Ops}
@@ -441,18 +452,28 @@ Embora o foco em DevOps seja o mesmo que o descrito no manifesto ágil (Indivíd
     \label{fig:compartFerramentas}
 \end{figure}
 
-%\subsubsection{Colaboração, divisão de riscos, inovação e aprendizado}
-Quando questionados sobre o nível de colaboração entre os times, observa-se que os entrevistados encontram-se bem distribuídos entre os níveis de maturidade propostos. A partir da Figura \ref{fig:colaboracaoInovacao}, percebe-se que dez (30\%) deles já atingiram o nível de melhoria contínua neste quesito, já oito (26,67\%) estão no nível avançado e outros cinco (20\%) estão em um nível gerenciado. 
+Quando questionados sobre o processo de levantamento de requisitos não-funcionais, observa-se que 11 (36,67\%) dos entrevistados entende que esta é uma responsabilidade de ambas as equipes, porém, estes dados não são levados em conta durante o processo de desenvolvimento e que, 10 (30\%) realiza o levantamento de todos os requisitos ao longo do processo de desenvolvimento, porém, o time de operações não é incluído nas discussões. 
 \begin{figure}[H]
     \centering
-    \caption{Como o seu time colabora, divide riscos, inova e aprende?}
+    \caption{A equipe de desenvolvimento considera requisitos não-funcionais no processo de desenvolvimento de uma aplicação?}
+       \includegraphics[scale=.6]{imagens/requisitos.JPG}
+        \source{Elaborado pelo autor.}
+    \label{fig:requisitos}
+\end{figure}
+
+%\subsubsection{Colaboração, divisão de riscos, inovação e aprendizado}
+Quando questionados sobre o nível de colaboração entre os times, observa-se que os entrevistados encontram-se bem distribuídos entre os níveis de maturidade propostos. A partir da Figura \ref{fig:colaboracaoInovacao}, percebe-se que dez (30\%) deles já atingiram o nível de melhoria contínua neste quesito, já oito (26,67\%) estão no nível avançado e outros cinco (20\%) estão em um nível gerenciado. 
+
+\begin{figure}[H]
+    \centering
+        \caption{Como o seu time colabora, divide riscos, inova e aprende?}
        \includegraphics[scale=.6]{imagens/colaboracaoInovacao.JPG}
         \source{Elaborado pelo autor.}
     \label{fig:colaboracaoInovacao}
-\end{figure}
-
+ \end{figure}
 %\subsubsection{Planejamento, priorização e agendamento do trabalho}
 Ainda seguindo na linha de divisão de responsabilidades, os entrevistados responderam sobre como o trabalho é planejado, priorizado e agendado dentro de suas companhias. Observa-se na Figura \ref{fig:planejamentoTrabalho} que as respostas não acompanham a tendência em relação a questão de colaboração, 12 (40\%) dos entrevistados dizem que há uma tentativa de priorização de trabalho dentro das equipes, mas de maneira irregular. 
+
 \begin{figure}[H]
     \centering
     \caption{Como é planejado, priorizado e agendado o trabalho?}
@@ -460,12 +481,14 @@ Ainda seguindo na linha de divisão de responsabilidades, os entrevistados respo
         \source{Elaborado pelo autor.}
     \label{fig:planejamentoTrabalho}
 \end{figure}
+
 Observa-se neste item que apesar dos entrevistados responderem que possuem um alto nível de colaboração entre as equipes, ainda não há um processo bem estabelecido quanto ao planejamento de trabalho. Ponto que pode causar desconfortos entre os times quanto a definição de prioridades em suas rotinas.
 
 \subsection{Análise de maturidade sobre práticas DevOps}
 Realiza-se nesta seção uma análise sobre o nível de maturidade das técnicas de automação utilizadas em DevOps. Analisa-se em particular as técnicas de Infraestrutura-como-Código, Monitoramento Contínuo, Entrega/Integração Contínua, Testes Contínuos e Melhoria Continua. Para tanto, utilizamos a escala citada no seção de Projeto do Survey.  Cabe destacar que esta pesquisa considera uma amostra de análise, ou seja, os dados analisados apontam para o nível de maturidade de uma determinada amostra de profissionais inseridos em companhias que praticam a cultura DevOps e suas práticas de automação.
 
 A Tabela 1 apresenta os resultados obtidos nas questões 14, 16, 18, 19, 20 e 21. Segundo os resultados, observa-se que grande parte dos entrevistados ainda estão entre os níveis de maturidade inicial e gerenciado em relação as práticas de automação.
+\setlength{\belowcaptionskip}{0.0pt}
 \begin{table}[H]
 \footnotesize
 \caption{Distribuição dos níveis de maturidade}
@@ -509,8 +532,7 @@ Este tipo de apresentação também facilita a detecção de valores discrepante
         \source{Elaborado pelo autor.}
     \label{fig:importanciapratDevOps}
 \end{figure}
-
-
+Observa-se na Figura \ref{fig:importFerramentas} que os grupos de ferramentas também mapeados por \citetexto{Kerzazi2016} também são relevantes, segundo a percepção dos entrevistados. Os grupos de ferramentas referentes à controle de versões (código), gestão de configuração, Sistemas de Build, teste e integração foram os itens que em média, possuem uma maior relevância para os entrevistados. Ferramentas de gestão de mudanças, orquestração e provisionamento, também são consideradas relevantes, porém com uma maior variância entre os níveis Sem importância e Importante.
 \begin{figure}[H]
     \centering
     \caption{Importância de grupos de ferramentas segundo entrevistados}
@@ -518,8 +540,6 @@ Este tipo de apresentação também facilita a detecção de valores discrepante
         \source{Elaborado pelo autor.}
     \label{fig:importFerramentas}
 \end{figure}
-
-
 
 \subsubsection{Quais são os recursos  utilizados por estes profissionais para adquirir novos conhecimentos?}
 A pergunta \textbf{24} tem como tem como objetivo realizar uma breve análise sobre quais são as principais fontes de informação utilizadas por profissionais para aprendizagem sobre o tópico DevOps. Observa-se na Figura \ref{fig:fontesConhecimento} que segundo os entrevistados, as fontes de busca sobre o assunto estão prioritariamente relacionadas a conteúdos online, como youtube, blogs técnicos, fóruns (Stack overflow,  Reddit, etc..) bem como sites de treinamentos Online. Enquanto opções como cursos presenciais e faculdade possuem uma menor adesão. Os dados brutos sobre cada tópico encontram-se na seção de anexos.
@@ -549,6 +569,14 @@ Em uma breve análise qualitativa é possível observar que como principais difi
 Os motivos que impediriam a adoção da cultura DevOps estão relacionados à tópicos como valores a serem investidos e, novamente, as barreiras culturais. Como principais frases observa-se: ``Falta de interesse/vontade'' e ``Falta de apoio/recursos por parte de lideranças''. As respostas na integra encontram-se na seção de anexos.
 
 %Dada a baixa adesão destas duas questões, tornou-se inviável realizar uma análise mais profunda sobre estes dois tópicos.
+\section{Discussão sobre os resultados}
+Observa-se após a análise dos dados sócio demográficos que 19 (63,33\%) dos entrevistados são oriundos da área de Desenvolvimento de \textit{software} e, que 18 (60\%) dos entrevistados possui mais de 10 anos de experiência no mercado de TI. Ainda sobre os dados demográficos, observa-se que 14 (46,67\%) atualmente trabalha em companhias de Tecnologia/Software e que 16 (53,33\%) são de grandes companhias (mais de 500 colaboradores).
+Na análise de perguntas relacionadas às escalas de maturidade, verificou-se que grande parte dos entrevistados distribui-se entre os níveis de maturidade consciente e gerenciado, o que significa que as práticas estão tornando-se sistematizadas dentro das organizações.
+Com a análise dos dados nas questões 22 e 23 foi possível concluir que os achados de \citetexto{Kerzazi2016} sobre Ferramentas e Atividades em DevOps, são também relevantes para a realidade dos profissionais Brasileiros, segundo a percepção dos entrevistados. 
+Na questão 24 realizamos uma breve análise sobre quais são as fontes de informação utilizadas pelos entrevistados para apredizagem sobre DevOps. Observa-se que em média, os entrevistados tem optado por recursos \textit{Online} em detrimento à fontes como cursos presenciais.
+Na questão 25, observa-se que segundo a percepção dos entrevistados, a entrega contínua é o maior benefício ao adotar práticas DevOps dentro das possibilidades listadas na questão. 
+Nas questões 26 e 27 são listados como maior desafio para iniciar em DevOps está ``Falta de apoio/interesse de lideranças/equipes'', resultado que também é observado dentre os motivos que impediriam a adoção da cultura DevOps. 
+
 
 \section{Conclusão}
 Este estudo propôs-se a realizar um panorama sobre o nível de maturidade das práticas DevOps para profissionais brasileiros. Para tanto, buscou-se estudos relacionados ao tema DevOps, delimitando quais são suas práticas de automação, atividades e grupos de ferramentas relacionadas ao cotidiano dos profissionais. Os achados de pesquisa forneceram uma base sólida para a construção do presente trabalho. O Survey construído para esta pesquisa com base nos achados, os termos técnicos e processos descritos são similares aos dos demais artigos afim de confirmar a validade das proposições. A análise dos dados propiciou um entendimento de que a realidade dos respondentes é muito próxima aos achados de pesquisa, validando a relevância de experiências, ferramentas e processos, bem como verificou que grande parte dos entrevistados distribui-se entre os níveis de maturidade consciente e gerenciado, o que significa que as práticas estão tornando-se sistematizadas dentro das organizações.
@@ -575,9 +603,7 @@ Para trabalhos futuros, recomenda-se a ampliação da amostra de pesquisa, afim 
 
 
 \appendix
-
-\section{Survey}
-\includepdf[nup = 1x2, pages=-, pagecommand={}]{questionario.pdf}
+\includepdf[scale=0.8, nup = 1x3, pages=-, pagecommand=\section{Survey}]{questionario.pdf}
 
 
 \section{Resultados do Survey}
